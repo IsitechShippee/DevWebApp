@@ -1,0 +1,49 @@
+body {
+    margin: 0;
+}
+.Navbar {
+    position: absolute;
+    background-color: #2D2A2A;
+    margin: 2% 0 2% 1%;
+    width: 4%;
+    height: 92%;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+.Navbar-top {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    margin: 60% 0 0 0;
+    align-items: center;
+}
+.Navbar-bottom {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    margin: 0 0 60% 0;
+    align-items: center;
+}
+.NavbarItem {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+.Navbar-links {
+    text-decoration: none;
+    color: #FF0044;
+}
+.NavbarImg {
+    width: 30px;
+}
+.zoom {
+    transition: transform .1s;
+}
+.zoom:hover{
+    -ms-transform: scale(1.9);
+    -webkit-transform: scale(1.5);
+    transform: scale(1.2);
+}
