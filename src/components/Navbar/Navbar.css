@@ -1,7 +1,18 @@
-body {
-    margin: 0;
+html {
+    padding: 0px;
+    margin: 0px;
 }
-.Navbar {
+/* .Navbar {
+    position: absolute;
+    background-color: #2D2A2A;
+    margin: 2% 0 2% 1%;
+    width: 12%;
+    height: 92%;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: row;
+} */
+.Navbar-small {
     position: absolute;
     background-color: #2D2A2A;
     margin: 2% 0 2% 1%;
@@ -13,18 +24,22 @@ body {
     justify-content: space-between;
     align-items: center;
 }
+.Navbar-small:hover {
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+}
 .Navbar-top {
     display: flex;
     flex-direction: column;
     gap: 40px;
-    margin: 60% 0 0 0;
+    margin: 35px 0 0 0;
     align-items: center;
 }
 .Navbar-bottom {
     display: flex;
     flex-direction: column;
     gap: 40px;
-    margin: 0 0 60% 0;
+    margin: 0 0 35px 0;
     align-items: center;
 }
 .NavbarItem {
@@ -32,13 +47,60 @@ body {
     align-items: center;
     width: 100%;
 }
+.Navbar-extend {
+    position: absolute;
+    background-color: #2D2A2A;
+    margin: 2% 0 2% 5%;
+    width: 8%;
+    height: 92%;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    z-index: 1;
+}
+.Navbar-top-extend {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    margin: 34px 0 0 0;
+}
+.Navbar-bottom-extend {
+    display: flex;
+    flex-direction: column;
+    gap: 47px;
+    margin: 0 0 45px 0;
+}
+.NavbarItem-extend {
+    display: flex;
+    flex-direction: row;
+    width: 70%;
+    margin: 0 0 0 15px;
+}
+.Navbar-links-extend {
+    display: flex;
+    text-decoration: none;
+    color: #FF0044;
+    width: 10%;
+}
+.Navbar-name {
+    margin: 0 0 0 5%;
+    padding: 6px 0 0 0;
+}
+/*///////////////////////////*/
 .Navbar-links {
     text-decoration: none;
     color: #FF0044;
 }
 .NavbarImg {
     width: 30px;
+    /* border-radius: 10px;
+    padding: 10px; */
 }
+/*.NavbarImg:hover {
+    background:radial-gradient(closest-side, #2D2A2A, #2D2A2A, #FF0044);
+}*/
 .zoom {
     transition: transform .1s;
 }
@@ -46,4 +108,120 @@ body {
     -ms-transform: scale(1.9);
     -webkit-transform: scale(1.5);
     transform: scale(1.2);
+    transition: width .5s ease 0.1s;
+}
+/*/// RESPONSIVE ///*/
+@media only screen and (max-width: 1400px) {
+    .NavbarImg {
+      width: 25px;
+    }
+    .Navbar-extend {
+        width: 11%;
+        margin: 2% 0 2% 4.6%;
+    }
+    .Navbar-top-extend {
+        gap: 44px;
+    }
+    .Navbar-bottom-extend {
+        gap: 44px;
+        margin: 0 0 42px 0;
+    }
+}
+@media only screen and (max-width: 1200px) {
+    .NavbarImg {
+      width: 25px;
+    }
+    .Navbar-extend {
+        width: 11%;
+        margin: 2% 0 2% 4.7%;
+    }
+    .Navbar-top-extend {
+        gap: 44px;
+    }
+    .Navbar-bottom-extend {
+        gap: 44px;
+        margin: 0 0 42px 0;
+    }
+}
+@media only screen and (max-width: 1000px) {
+    .Navbar-small {
+        width: 5%;
+    }
+    .Navbar-extend {
+        width: 11%;
+        font-size: 14px;
+        margin: 2% 0 2% 6%;
+    }
+    .Navbar-top-extend {
+        gap: 45px;
+    }
+    .Navbar-bottom-extend {
+        gap: 45px;
+    }
+}
+@media only screen and (max-width: 800px) {
+    .Navbar-small {
+        width: 6%;
+    }
+    .Navbar-extend {
+        width: 13%;
+        font-size: 12px;
+        margin: 2% 0 2% 6%;
+    }
+    .Navbar-top-extend {
+        gap: 50px;
+    }
+    .Navbar-bottom-extend {
+        gap: 50px;
+        margin: 0 0 45px 0;
+    }
+}
+@media only screen and (max-width: 700px) {
+    .Navbar-small {
+        width: 7%;
+        height: 90%;
+        margin: 4% 0 2% 1%;
+    }
+    .Navbar-extend {
+        width: 14%;
+        height: 90%;
+        margin: 4% 0 2% 7%;
+        font-size: 12px;
+    }
+}
+@media only screen and (max-width: 600px) {
+    .Navbar-small {
+        width: 8%;
+        height: 90%;
+        margin: 4% 0 2% 1%;
+    }
+    .Navbar-extend {
+        width: 15%;
+        height: 90%;
+        margin: 4% 0 2% 9%;
+        font-size: 12px;
+    }
+    .NavbarItem-extend {
+        margin: 0 0 0 5px;
+    }
+}
+@media only screen and (max-width: 500px) {
+    .Navbar-small {
+        position: absolute;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        width: 100%;
+        height: 50px;
+        border-radius: 0px;
+        bottom: 0;
+        left: 0;
+    }
+    .Navbar-top {
+        display: none;
+    }
+    .Navbar-bottom {
+        display: none;
+    }
 }
