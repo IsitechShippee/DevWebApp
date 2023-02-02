@@ -1,5 +1,11 @@
 import './Navbar.css';
 import React, { useState } from 'react';
+import { Link, Route } from "react-router-dom";
+//Importation des composants
+import HomePage from '../Home/Home';
+import SearchPage from '../Search/Search';
+/*import PostPage from '../Post/Post';
+import ChattingPage from '../Chatting/Chat';*/
 //Importation des icônes
 import Home from '../../images/Home.png';
 import Search from '../../images/Search.png';
@@ -8,7 +14,7 @@ import Chat from '../../images/Chatting.png';
 import User from '../../images/User.png';
 import Parameter from '../../images/Parameter.png';
 
-function Navbar() {
+export default  function Navbar() {
 
   const [isShow, setIsShow] = useState(false);
 
@@ -20,16 +26,16 @@ function Navbar() {
         <div className='Navbar-small'>
           <div className='Navbar-top'>
             <div className='NavbarItem'>
-              <a className='Navbar-links' href='#'><img className='NavbarImg zoom' src={Home}></img></a>
+              <Link to="/" className='Navbar-links'><img className='NavbarImg zoom' src={HomePage}></img></Link>
             </div>
             <div className='NavbarItem'>
-              <a className='Navbar-links' href='#'><img className='NavbarImg zoom' src={Search}></img></a>
+              <a className='Navbar-links' href='#'><img className='NavbarImg zoom' src={SearchPage}></img></a>
             </div>
             <div className='NavbarItem'>
-              <a className='Navbar-links' href='#'><img className='NavbarImg zoom' src={Post}></img></a>
+              <a className='Navbar-links' href='#'><img className='NavbarImg zoom' src='#'></img></a>
             </div>
             <div className='NavbarItem'>
-              <a className='Navbar-links' href='#'><img className='NavbarImg zoom' src={Chat}></img></a>
+              <a className='Navbar-links' href='#'><img className='NavbarImg zoom' src='#'></img></a>
             </div>
           </div>
           <div className='Navbar-bottom'>
@@ -74,8 +80,8 @@ function Navbar() {
           </div>
         </div>
       )}
+      <Route exact path="/" component={HomePage} />
+      <Route exact path="/recherche" component={SearchPage} />
     </div>
   );
 }
-
-export default Navbar;

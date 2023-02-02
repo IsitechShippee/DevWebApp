@@ -2,7 +2,7 @@ import './Home.css';
 import React from "react";
 import Annonce from "../Announcement/Annonce";
 
-function Home() {
+export default function Home() {
 
   return (
     <section className='Home'>
@@ -32,5 +32,3 @@ function Home() {
     </section>
   );
 }
-
-export default Home;
