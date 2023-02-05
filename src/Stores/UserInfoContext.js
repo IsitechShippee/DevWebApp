@@ -59,7 +59,6 @@ export const myAppContextUserInfo = createContext({
         "rec_announcements": [],
         "select_announcements": [],
         "recent_search": [],
-
     },
     dispatchUserInfo: (action) => { },
 })

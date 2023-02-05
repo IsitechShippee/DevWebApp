@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './view/App';
+import App from './Views/App';
 import { MyAppContextUserInfoProvider } from './Stores/UserInfoContext'
 import { BrowserRouter } from 'react-router-dom';
 

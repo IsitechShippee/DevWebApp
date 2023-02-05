@@ -5,7 +5,14 @@ L'améliroation pour le rendu finit se fera dans la V1.
 
 ## Version 0.1
 
-La Maj 0.1 a pour but ...
+La Maj 0.1 a pour but de réaliser la structure global du projet
+
+### V0.1.1
+
+ - Mise en fonction de la nav bar : router (NavBar.js)
+ - Style de la nav bar (NavBar.css)
+ - Responsive de la nav bar (NavBar.css)
+ - Création des variables css de couleur (index.css) 
 
 ### V0.1.0
 

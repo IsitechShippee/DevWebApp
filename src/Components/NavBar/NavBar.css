@@ -1,0 +1,94 @@
+@media screen and (orientation: landscape) {
+    .navbar {
+        position: absolute;
+        top: 2.5vh;
+        left: 2.5vh;
+        background-color: var(--color-black);
+        width: 80px;
+        height: 95vh;
+        border-radius: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        transition: all .3s ease-in-out;
+        overflow: hidden;
+    }
+
+    .navbar:hover {
+        width: 280px;
+    }
+
+    .navbar svg {
+        margin: 20px;
+        width: 40px;
+        height: 40px;
+        position: absolute;
+    }
+
+    .navbar a {
+        height: 80px;
+        display: flex;
+        text-decoration: none;
+        color: var(--color-black-pink);
+        fill: var(--color-black-pink);
+        align-items: center;
+    }
+
+    .navbar h1 {
+        margin-left: 80px;
+        visibility: collapse;
+        font-size: 20px;
+        transform: translateX(80px);
+        transition: transform .3s ease;
+    }
+
+    .navbar:hover h1 {
+        visibility: visible;
+        transform: none;
+    }
+
+    .navbar .active {
+        fill: var(--color-pink);
+        color: var(--color-pink);
+    }
+}
+
+
+@media screen and (orientation: portrait) {
+    .navbar {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        background-color: var(--color-black);
+        width: 100vw;
+        height: 10vw;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        overflow: hidden;
+    }
+
+    .navbar svg {
+        width: 7vw;
+        height: 7vw;
+        align-self: center;
+    }
+
+    .navbar a {
+        height: 100%;
+        display: flex;
+        text-decoration: none;
+        color: var(--color-black-pink);
+        fill: var(--color-black-pink);
+    }
+
+    .navbar h1 {
+        visibility: collapse;
+        position: absolute;
+    }
+
+    .navbar .active {
+        fill: var(--color-pink);
+        color: var(--color-pink);
+    }
+}
