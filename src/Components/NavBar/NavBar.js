@@ -19,7 +19,7 @@ function NavBar() {
         <h1>Accueil</h1>
       </Link>
       <Link to='/search' onClick={() => acitveElement(1)} className={isActive === 1 ? 'active' : ''}>
-        <SVG.Home2 />
+        <SVG.Home />
         <h1>Rechercher</h1>
       </Link>
       <Link to='/newpost' onClick={() => acitveElement(2)} className={isActive === 2 ? 'active' : ''}>
@@ -27,7 +27,7 @@ function NavBar() {
         <h1>NewPost</h1>
       </Link>
       <Link to='/chat' onClick={() => acitveElement(3)} className={isActive === 3 ? 'active' : ''}>
-        <SVG.Home2 />
+        <SVG.Home />
         <h1>Message</h1>
       </Link>
       <Link to='/user' onClick={() => acitveElement(4)} className={isActive === 4 ? 'user active' : 'user'}>

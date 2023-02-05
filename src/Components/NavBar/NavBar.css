@@ -9,7 +9,7 @@
         border-radius: 20px;
         display: flex;
         flex-direction: column;
-        justify-content: start;
+        justify-content: flex-start;
         transition: all .3s ease-in-out;
         overflow: hidden;
     }
