@@ -3,9 +3,38 @@
 La version 0 a pour but de faire une application fonctionnel répondant au cahier des charges. Elle n'a pas pour but d'être un produit fini, mais simplement fonctionnel.
 L'améliroation pour le rendu finit se fera dans la V1.
 
+## Version 0.2
+
+La maj 0.2 a pour but de réaliser la page d'accueil. Elle se compose :
+ - du message d'accueil
+ - de plusieur liste d'annonce
+ - de plusieur annonce par liste d'annonce
+
+### Version 0.2.4
+
+ - Réalisation de la page d'accueil final
+
+### Version 0.2.3
+
+ - Réalisation du composant des pop-up d'annonce (AnnoucementPopUp)
+
+### Version 0.2.2
+
+ - Réalisation du composant des liste d'annonce (ListAnnouncement)
+
+### Version 0.2.1
+
+ - Réalisation du composant des annonces (Annoucement)
+
+### Version 0.2.0
+
+ - Message d'accueil
+
 ## Version 0.1
 
-La Maj 0.1 a pour but de réaliser la structure global du projet
+La Maj 0.1 a pour but de réaliser la structure global du projet :
+ - Structure des fichiers
+ - Bar de navigation
 
 ### V0.1.1
 
