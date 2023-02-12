@@ -56,7 +56,54 @@ export const myAppContextUserInfo = createContext({
         "convs": [],
         "loc_announcements": [],
         "rec_announcements": [],
-        "select_announcements": [],
+        "select_announcements": [{
+            "id": 1,
+            "title": "recherche alternance",
+            "description": "zhfjfvj sggjbdsjvjsh shgsghvf",
+            "publish_date": "2023-02-01T00:00:00",
+            "status": {
+                "id": 1,
+                "status": "Privée"
+            },
+            "naf_division_title": "Fabrication de boissons",
+            "job_title": null
+        },
+        {
+            "id": 2,
+            "title": "recherche alternance",
+            "description": "gjkjhg dgfsdssdhgv hjgjhdfgvxc",
+            "publish_date": "2022-12-31T00:00:00",
+            "status": {
+                "id": 2,
+                "status": "Disponible"
+            },
+            "naf_division_title": "Fabrication de boissons",
+            "job_title": null
+        },
+        {
+            "id": 3,
+            "title": "recherche alternance",
+            "description": "gjkjhg dgfsdssdhgv hjgjhdfgvxc",
+            "publish_date": "2022-12-31T00:00:00",
+            "status": {
+                "id": 2,
+                "status": "Disponible"
+            },
+            "naf_division_title": "Fabrication de boissons",
+            "job_title": null
+        },
+        {
+            "id": 4,
+            "title": "recherche alternance",
+            "description": "gjkjhg dgfsdssdhgv hjgjhdfgvxc",
+            "publish_date": "2022-12-31T00:00:00",
+            "status": {
+                "id": 2,
+                "status": "Disponible"
+            },
+            "naf_division_title": "Fabrication de boissons",
+            "job_title": null
+        }],
         "recent_search": [],
     },
     dispatchUserInfo: (action) => { },
@@ -123,7 +170,54 @@ export const MyAppContextUserInfoProvider = ({ children }) => {
         "convs": [],
         "loc_announcements": [],
         "rec_announcements": [],
-        "select_announcements": [],
+        "select_announcements": [{
+            "id": 1,
+            "title": "recherche alternance",
+            "description": "zhfjfvj sggjbdsjvjsh shgsghvf",
+            "publish_date": "2023-02-01T00:00:00",
+            "status": {
+                "id": 1,
+                "status": "Privée"
+            },
+            "naf_division_title": "Fabrication de boissons",
+            "job_title": null
+        },
+        {
+            "id": 2,
+            "title": "recherche alternance",
+            "description": "gjkjhg dgfsdssdhgv hjgjhdfgvxc",
+            "publish_date": "2022-12-31T00:00:00",
+            "status": {
+                "id": 2,
+                "status": "Disponible"
+            },
+            "naf_division_title": "Fabrication de boissons",
+            "job_title": null
+        },
+        {
+            "id": 3,
+            "title": "recherche alternance",
+            "description": "gjkjhg dgfsdssdhgv hjgjhdfgvxc",
+            "publish_date": "2022-12-31T00:00:00",
+            "status": {
+                "id": 2,
+                "status": "Disponible"
+            },
+            "naf_division_title": "Fabrication de boissons",
+            "job_title": null
+        },
+        {
+            "id": 4,
+            "title": "recherche alternance",
+            "description": "gjkjhg dgfsdssdhgv hjgjhdfgvxc",
+            "publish_date": "2022-12-31T00:00:00",
+            "status": {
+                "id": 2,
+                "status": "Disponible"
+            },
+            "naf_division_title": "Fabrication de boissons",
+            "job_title": null
+        }],
         "recent_search": [],
     })
 

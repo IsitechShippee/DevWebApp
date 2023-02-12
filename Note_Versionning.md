@@ -20,11 +20,13 @@ La maj 0.2 a pour but de réaliser la page d'accueil. Elle se compose :
 
 ### Version 0.2.2
 
- - Réalisation du composant des liste d'annonce (ListAnnouncement)
+ - Réalisation du composant des annonces (Annoucement)
 
 ### Version 0.2.1
 
- - Réalisation du composant des annonces (Annoucement)
+ - Réalisation du composant des liste d'annonce (ListAnnouncement.js/ListAnnoucement.css)
+ - Patch Home.js/Home.css
+ - Patch de la stucture du fichier
 
 ### Version 0.2.0
 

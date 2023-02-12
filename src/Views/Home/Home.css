@@ -7,19 +7,21 @@
     position: absolute;
     height: auto;
     opacity: .1;
+    z-index: 1;
 }
 
 .home .welcome {
     height: 45vh;
 }
 
-.home h1 {
+.home h1.title {
     position: absolute;
 }
 
-.home h2 {
+.home h2.title {
     position: absolute;
 }
+
 
 @media screen and (orientation: landscape) {
 
@@ -29,13 +31,13 @@
         width: 40vw;
     }
 
-    .home h1 {
+    .home h1.title {
         top: 18vh;
         padding-left: 15vw;
         font-size: 45px;
     }
 
-    .home h2 {
+    .home h2.title {
         top: 25vh;
         padding-left: calc(65vw - 300px);
         font-size: 35px;
@@ -49,13 +51,13 @@
         width: 70vw;
     }
 
-    .home h1 {
+    .home h1.title {
         top: 18vh;
         padding-left: 12vw;
         font-size: 40px;
     }
 
-    .home h2 {
+    .home h2.title {
         top: 25vh;
         padding-left: calc(85vw - 260px);
         font-size: 30px;
