@@ -1,0 +1,11 @@
+@media screen and (orientation: landscape) {
+    .app {
+        margin: 0 0 0 calc(5vh + 80px);
+    }
+}
+
+@media screen and (orientation: portrait) {
+    .app {
+        margin: 0;
+    }
+}

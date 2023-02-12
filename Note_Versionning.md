@@ -28,7 +28,7 @@ La maj 0.2 a pour but de réaliser la page d'accueil. Elle se compose :
 
 ### Version 0.2.0
 
- - Message d'accueil
+ - Message d'accueil (Home.js/Home.csss)
 
 ## Version 0.1
 

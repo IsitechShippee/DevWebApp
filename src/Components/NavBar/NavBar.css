@@ -1,6 +1,6 @@
 @media screen and (orientation: landscape) {
     .navbar {
-        position: absolute;
+        position: fixed;
         top: 2.5vh;
         left: 2.5vh;
         background-color: var(--color-black);
@@ -56,7 +56,7 @@
 
 @media screen and (orientation: portrait) {
     .navbar {
-        position: absolute;
+        position: fixed;
         bottom: 0;
         left: 0;
         background-color: var(--color-black);

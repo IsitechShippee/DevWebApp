@@ -17,8 +17,7 @@ function App() {
   const userInfo = useContext(myAppContextUserInfo)
 
   return (
-    <div className="App">
-      Hello World
+    <div className="app">
       <NavBar />
       <Routes>
         <Route path="/" element={<Home />} />
