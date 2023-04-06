@@ -1,9 +1,16 @@
 import React from 'react'
 import '../Annoucement.css'
 
-function RecuiterAnnoucement() {
+function RecuiterAnnoucement(props) {
+  
+  console.log(props.annoucement)
+
   return (
-    <div>RecuiterAnnoucement</div>
+    <div className='annoucement'>
+      <h4>{props.annoucement.title}</h4>
+      <h5>{props.annoucement.localisation}</h5>
+      <p>{props.annoucement.description}</p>
+    </div>
   )
 }
 

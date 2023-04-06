@@ -26,9 +26,11 @@ function ListAnnoucement(props) {
     return (
         <div className='list_annoucement'>
             <h3>{props.title}</h3>
-            <div className='content_list'>
-                {userInfo.userInfo[props.type].map((annoucement, index) => (selection(annoucement, index)))}
-                {props.isViewsMore && <Link to='/'><button>Voir plus</button></Link>}
+            <div className='scroll'>
+                <div className='content_list'>
+                    {userInfo.userInfo[props.type].map((annoucement, index) => (selection(annoucement, index)))}
+                    {props.isViewsMore && <Link to='/'><button>Voir plus</button></Link>}
+                </div>
             </div>
         </div>
     )
