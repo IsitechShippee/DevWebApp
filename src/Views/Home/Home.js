@@ -1,12 +1,15 @@
 import React, { useContext } from 'react'
 import { myAppContextUserInfo } from '../../Stores/UserInfoContext'
+import { myAppContextPopUp } from '../../Stores/PopUpContext'
 import LogoShippee from '../../Pictures/Logo_Shippee.png'
 import './Home.css'
 import ListAnnoucement from '../../Components/ListAnnoucement/ListAnnoucement'
+import PopUp from '../../Components/PopUp/PopUp'
 
 function Home() {
 
   const userInfo = useContext(myAppContextUserInfo)
+  const popUp = useContext(myAppContextPopUp)
 
   console.log()
 
@@ -22,6 +25,8 @@ function Home() {
       <div className='list'>
         <ListAnnoucement type={'select_announcements'} isViewsMore={true} title={'Pour vous'} />
       </div>
+
+      { popUp.home && <PopUp></PopUp>}
 
     </div>
   )

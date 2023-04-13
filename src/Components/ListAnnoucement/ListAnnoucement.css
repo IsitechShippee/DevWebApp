@@ -1,28 +1,28 @@
 .list_annoucement h3 {
-    font-size: 22px;
-    padding-bottom: 10px;
+  font-size: 22px;
+  padding-bottom: 10px;
 }
 
 .list_annoucement .scroll {
-    overflow-x: scroll;
+  overflow-x: scroll;
 }
 
 .list_annoucement .content_list {
-    display: flex;
-    min-width: min-content;
-    gap: 20px;
-    align-items: center;
-    padding-bottom: 15px;
+  display: flex;
+  min-width: min-content;
+  gap: 20px;
+  align-items: center;
+  padding-bottom: 15px;
 }
 
 .list_annoucement .content_list a,
 .list_annoucement .content_list button {
-    width: 90px;
-    justify-self: flex-start;
-    margin-right: 30px;
-    color: var(--color-pink);
-    background-color: transparent;
-    font-size: 18px;
-    cursor: pointer;
-    z-index: 100;
+  width: 90px;
+  justify-self: flex-start;
+  margin-right: 30px;
+  color: var(--color-pink);
+  background-color: transparent;
+  font-size: 18px;
+  cursor: pointer;
+  z-index: 100;
 }

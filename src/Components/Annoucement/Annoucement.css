@@ -3,6 +3,7 @@
     height: 280px;
     background: linear-gradient(113deg, var(--color-clear-pink), var(--color-clear-pink2));
     border-radius: 22px;
+    cursor: pointer;
 }
 
 .annoucement h4{

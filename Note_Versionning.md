@@ -20,7 +20,9 @@ La maj 0.2 a pour but de réaliser la page d'accueil. Elle se compose :
 
 ### Version 0.2.2
 
- - Réalisation du composant des annonces (Annoucement)
+ - Réalisation du composant des annonces (Annoucement) :
+ - StudentAnnoucement
+ - RecruiterAnnoucement
 
 ### Version 0.2.1
 
