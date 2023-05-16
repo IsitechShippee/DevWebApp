@@ -1,0 +1,21 @@
+.container {
+    width: 35vh;
+    height: 92vw;
+    transform: rotate(-90deg) translateX(-30vh);
+    transform-origin: top left;
+    overflow-x: hidden;
+    margin-top: 5vw;
+    padding-left: 1vw;
+
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.container .Selection {
+    display: flex;
+    flex-direction: row;
+    width: 180vw;
+    transform: rotate(90deg) translateY(-30vh);
+    transform-origin: top left;
+    margin-top: 5vw;
+}

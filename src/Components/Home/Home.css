@@ -1,0 +1,58 @@
+.Home {
+    height: 100%;
+    width: 100%;
+    background-color: white;
+    background-image: url("../../Pictures/Logo_Shippee_Opacity.png");
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-position-y: 5%;
+    background-size: 25%;
+}
+
+.Home .Titres {
+    width: 100%;
+    height: 45vh;
+    margin-bottom: 8vh;
+    display: flex;
+    justify-content: center;
+}
+
+.Home .Titres .bonjour {
+    font-size: 36px;
+    margin-top: 15vh;
+}
+
+.Home .Titres .petiteselection {
+    font-size: 28px;
+    margin-top: 35vh;
+    margin-left: 10vw;
+}
+
+.Home .Titres .petiteselection span{
+    font-weight: 600;
+    font-size: 32px;
+}
+
+.Home .PetiteAnnonce {
+    width: 92vw;
+    height: 50vh;
+    margin-left: 8%;
+    margin-top: 6vh;
+}
+
+.Home .None {
+    display: none;
+}
+
+.Home .None h2{
+    display: none;
+}
+
+.Home .PetiteAnnonce h2{
+    height: 5vh;
+    margin-left: 2vw;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}

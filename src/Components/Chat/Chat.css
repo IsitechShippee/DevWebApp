@@ -1,0 +1,91 @@
+.ChatAndConv .Chat {
+    width: 42vw;
+    height: 100vh;
+    margin-left: 8vw;
+}
+
+.ChatAndConv  .Chat .Cherche_Contact {
+    width: 42vw;
+    height: 13vh;
+    display: flex;
+    justify-content: center;
+    border-right: 1px solid black;
+}
+
+.ChatAndConv  .Chat .Cherche_Contact input {
+    width: 80%;
+    height: 5vh;
+    margin-top: 4vh;
+    margin-bottom: 4vh;
+    border-radius: 15px;
+    border: none;
+    outline: none;
+    background-color: #FFCAD7;
+    padding-left: 30px;
+    font-size: 20px;
+}
+
+.ChatAndConv .Chat .Cherche_Contact i {
+    position: absolute;
+    width: 3vw;
+    height: 6vh;
+    margin-top: 3.5vh;
+    margin-left: 30vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50px;
+}
+
+.ChatAndConv  .Chat .Liste_Contact {
+    width: 42vw;
+    height: 87vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-y: scroll;
+    background-color: #ffeef2;
+    border-right: 1px solid black;
+}
+
+.ChatAndConv  .Chat .Liste_Contact .Selected {
+    background: linear-gradient(45deg, #ff96b0, #ffffff, #ff96b0,#ffffff,#ff96b0, #ffffff, #ff96b0,#ffffff, #ff96b0,#ffffff);
+    background-size: 400% 400%;
+
+    -webkit-animation: AnimationName 8s linear infinite;
+    -moz-animation: AnimationName 8s linear infinite;
+    animation: AnimationName 8s linear infinite;
+}
+
+@-webkit-keyframes AnimationName {
+    from{background-position:0% 50%}
+    to{background-position:100% 50%}
+}
+@-moz-keyframes AnimationName {
+    from{background-position:0% 50%}
+    to{background-position:100% 50%}
+}
+@keyframes AnimationName {
+    from{background-position:0% 50%}
+    to{background-position:100% 50%}
+}
+
+.ChatAndConv  .Chat .Liste_Contact .hr {
+    width: 36vw;
+    height: 1px;
+    background-color: black;
+}
+
+.ChatAndConv  .Chat .Liste_Contact .nothr {
+    display: none;
+}
+
+.ChatAndConv  .laConversation {
+    width: 56vw;
+    height: 100vh;
+    display: none;
+}
+
+.ChatAndConv {
+    display: flex;
+}

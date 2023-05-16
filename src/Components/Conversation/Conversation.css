@@ -1,0 +1,171 @@
+.Conversation {
+  width: 50vw;
+  height: 100vh;
+}
+
+.Conversation .NamePeople {
+  width: 50vw;
+  height: 13vh;
+  display: flex;
+  align-items: center;
+  padding-left: 5vw;
+  gap: 3vw;
+  background: linear-gradient(0.25turn, rgb(255, 98, 200) 0%, rgb(166, 50, 255) 40%, rgb(80, 144, 255) 100%);
+}
+
+.Conversation .NamePeople img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50px;
+}
+
+.Conversation .NamePeople p {
+  font-size: 24px;
+  font-weight: 600;
+  color: white;
+}
+
+.Conversation .Ecrire {
+  width: 50vw;
+  height: 13vh;
+  border-top: 1px solid black;
+  display: flex;
+}
+
+.Conversation .Ecrire .textarea {
+  width: 45vw;
+  height: 10.5vh;
+  border: none;
+  outline: none;
+  padding: 20px;
+  font-size: 16px;
+  resize: none;
+}
+
+.Conversation .Ecrire .Envoie {
+  width: 6vw;
+  height: 10.5vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Conversation .Ecrire .Envoie i {
+  width: 70px;
+  height: 70px;
+  border-radius: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #C9178C;
+  cursor: pointer;
+}
+
+
+
+
+.Phone {
+  background: white;
+  height: 76vh;
+  overflow: hidden scroll;
+  width: 50vw;
+}
+
+.List {
+  list-style: none;
+  margin: 0;
+  padding: 50px;
+}
+
+.Item {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-align: end;
+  align-items: flex-end;
+}
+
+.Item+.Item {
+  margin-top: 8px;
+}
+
+.Avatar {
+  border-radius: 50%;
+  overflow: hidden;
+  flex-shrink: 0;
+  -webkit-box-flex: 0;
+  flex-grow: 0;
+  height: 32px;
+  width: 32px;
+}
+
+.Avatar-image {
+  display: block;
+  width: 100%;
+}
+
+.Messagess {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  flex-direction: column;
+}
+
+.Message {
+  color: white;
+  letter-spacing: 0.5px;
+  line-height: 1.25;
+  font-weight: 300;
+  margin: 1px;
+}
+
+.Message-inner {
+  background: #333;
+  display: inline-block;
+  max-width: 37.5vw;
+  padding: 20px;
+  font-size: 20px;
+}
+
+.Item--left .Messages {
+  margin-left: 16px;
+}
+
+.Item--left .Message-inner {
+  border-radius: 0 16px 16px 0;
+}
+
+.Item--left .Message:first-child .Message-inner {
+  border-top-left-radius: 16px;
+}
+
+.Item--left .Message:last-child .Message-inner {
+  border-bottom-left-radius: 16px;
+}
+
+.Item--right {
+  -webkit-box-pack: end;
+  justify-content: flex-end;
+}
+
+.Item--right .Messages {
+  -webkit-box-align: end;
+  align-items: flex-end;
+}
+
+.Item--right .Message-inner {
+  background-attachment: fixed;
+  background-size: 100vw 100vh;
+  border-radius: 16px 0 0 16px;
+
+  background-color: rgb(0, 95, 255);
+  background-image: linear-gradient(rgb(255, 46, 25) 0%, rgb(146, 0, 255) 50%, rgb(0, 95, 255) 100%);
+}
+
+.Item--right .Message:first-child .Message-inner {
+  border-top-right-radius: 16px;
+}
+
+.Item--right .Message:last-child .Message-inner {
+  border-bottom-right-radius: 16px;
+}

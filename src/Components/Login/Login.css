@@ -1,0 +1,99 @@
+.Login {
+    width: 92vw;
+    height: 100vh;
+    margin-left: 8vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, white 0%, #ffc3d2 100%);
+}
+
+.Login .Connection {
+    height: 60vh;
+    width: 25vw;
+    border-radius: 50px;
+    display: none;
+    flex-direction: column;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.Login .Connection h2 {
+    text-align: center;
+    margin-top: 50px;
+    font-size: 28px;
+    color: white;
+    font-weight: 800;
+}
+
+.Login .Connection .Form_Login {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    padding-top: 3vw;
+}
+
+.Login .Connection .Form_Login .Mail, .Login .Connection .Form_Login .Password {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.Login .Connection .Form_Login .Mail label, .Login .Connection .Form_Login .Password label{
+    font-size: 20px;
+    padding-left: 50px;
+    font-weight: 500;
+    color: white;
+}
+
+.Login .Connection .Form_Login .Mail input, .Login .Connection .Form_Login .Password input{
+    width: 80%;
+    height: 40px;
+    margin-left: 50px;
+    border: none;
+    background-color: none;
+    border-radius: 50px;
+    outline: none;
+    padding-left: 20px;
+}
+
+.Login .Connection .Form_Login .Valider_Form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.Login .Connection .Form_Login .Valider_Form button{
+    width: 50%;
+    height: 40px;
+    border: none;
+    border-radius: 50px;
+    background-color: #FF0044;
+    color: white;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.Login .Connection .Form_Login .Valider_Form p {
+    color: rgb(72, 72, 255);
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.Login .Inscription {
+    height: 80vh;
+    width: 35vw;
+    border-radius: 50px;
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.Login .Inscription h2 {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 28px;
+    color: white;
+    font-weight: 800;
+}
