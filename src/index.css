@@ -1,21 +1,38 @@
 *,
 ::before,
 ::after {
-    margin: 0;
-    padding: 0;
-    border: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
 
-    font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 :root {
-    --color-black: #2D2A2A;
-    --color-clear-pink: #FEE5EB;
-    --color-pink: #FF0044;
-    --color-clear-pink2: #FFA4BC;
-    --color-black-pink: #38000F;
+  --color-black: #2d2a2a;
+  --color-clear-pink: #fee5eb;
+  --color-pink: #ff0044;
+  --color-clear-pink2: #ffa4bc;
+  --color-black-pink: #38000f;
 
-    width: 100vw;
-    height: 100vh;
-    overflow-x: hidden;
+  width: 100vw;
+  height: 100vh;
+  overflow-x: hidden;
 }
+
+
+::-webkit-scrollbar {
+  width: 10px;
+  background-color: var(--color-clear-pink);
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  background-color: var(--color-pink);
+}
+
+::-webkit-scrollbar-button {
+    visibility: none;
+}
+
+

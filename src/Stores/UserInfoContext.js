@@ -1,225 +1,63 @@
 import React, { createContext, useReducer } from "react";
 
 export const myAppContextUserInfo = createContext({
-    userInfo: {
-        "connexion": true,
-        "id": 1,
-        "surname": "Rodrigues",
-        "firstname": "Paul",
-        "email": "paul@gmail.com",
-        "picture": "",
-        "is_online": false,
-        "type_user": {
-            "id": 1,
-            "title": "Etudiant"
-        },
-        "description": "Dev web full-stack",
-        "web_site": "paulrdgs.com",
-        "cv": "",
-        "cp": "69007",
-        "city": "Lyon",
-        "birthday": "2000-08-17",
-        "is_conveyed": false,
-        "skills": {
-            "1": "html",
-            "3": "js",
-            "5": "c#",
-            "7": "vba"
-        },
-        "announcements": [
-            {
-                "id": 1,
-                "title": "recherche alternance",
-                "description": "zhfjfvj sggjbdsjvjsh shgsghvf",
-                "publish_date": "2023-02-01T00:00:00",
-                "status": {
-                    "id": 1,
-                    "status": "Privée"
-                },
-                "naf_division_title": "Fabrication de boissons",
-                "job_title": null
-            },
-            {
-                "id": 2,
-                "title": "recherche alternance",
-                "description": "gjkjhg dgfsdssdhgv hjgjhdfgvxc",
-                "publish_date": "2022-12-31T00:00:00",
-                "status": {
-                    "id": 2,
-                    "status": "Disponible"
-                },
-                "naf_division_title": "Fabrication de boissons",
-                "job_title": null
-            }
-        ],
-        "favorites": [],
-        "convs": [],
-        "loc_announcements": [],
-        "rec_announcements": [],
-        "select_announcements": [{
-            "id": 1,
-            "title": "recherche alternance",
-            "description": "zhfjfvj sggjbdsjvjsh shgsghvf",
-            "publish_date": "2023-02-01T00:00:00",
-            "status": {
-                "id": 1,
-                "status": "Privée"
-            },
-            "naf_division_title": "Fabrication de boissons",
-            "job_title": null
-        },
-        {
-            "id": 2,
-            "title": "recherche alternance",
-            "description": "gjkjhg dgfsdssdhgv hjgjhdfgvxc",
-            "publish_date": "2022-12-31T00:00:00",
-            "status": {
-                "id": 2,
-                "status": "Disponible"
-            },
-            "naf_division_title": "Fabrication de boissons",
-            "job_title": null
-        },
-        {
-            "id": 3,
-            "title": "recherche alternance",
-            "description": "gjkjhg dgfsdssdhgv hjgjhdfgvxc",
-            "publish_date": "2022-12-31T00:00:00",
-            "status": {
-                "id": 2,
-                "status": "Disponible"
-            },
-            "naf_division_title": "Fabrication de boissons",
-            "job_title": null
-        },
-        {
-            "id": 4,
-            "title": "recherche alternance",
-            "description": "gjkjhg dgfsdssdhgv hjgjhdfgvxc",
-            "publish_date": "2022-12-31T00:00:00",
-            "status": {
-                "id": 2,
-                "status": "Disponible"
-            },
-            "naf_division_title": "Fabrication de boissons",
-            "job_title": null
-        }],
-        "recent_search": [],
-    },
+    userInfo: {},
     dispatchUserInfo: (action) => { },
 })
 
 export const MyAppContextUserInfoProvider = ({ children }) => {
 
     const userInfoReducer = (state, action) => {
-        return state
+        console.log('Demande : ' + action.type + ' - Payload : ', action.payload)
+        switch (action.type) {
+            case 'CONNECT':
+                return action.payload
+            case 'LOVE':
+                let newState = state
+
+                // On regarde si c'est un ajout au favoris ou un retrait
+                let isAdd = true;
+                newState.favorites.forEach(element => {
+                    if (element.id === action.payload.id) {
+                        isAdd = false
+                    }
+                })
+
+                // On parcourt les annonces pour ajouter a l'annonce en question le favori
+                // newState.loc_announcements.forEach(element => {
+                //     if (element.id === action.payload.id) {
+                //         element.favorite = isAdd
+                //     }
+                // })
+
+                newState.recents_announcements.forEach(element => {
+                    if (element.id === action.payload.id) {
+                        element.favorite = isAdd
+                        // console.log(element.id + ' : ' + element.favorite)
+                    }
+                })
+
+                // newState.select_announcements.forEach(element => {
+                //     if (element.id === action.payload.id) {
+                //         element.favorite = isAdd
+                //         // console.log(element.id + ' : ' + element.favorite)
+                //     }
+                // })
+
+                // On ajoute ou retire l'annonce des favoris*
+                if (isAdd) {
+                    newState.favorites.push(action.payload)
+                } else {
+                    newState.favorites = newState.favorites.filter((item) => item.id !== action.payload.id)
+                }
+
+                return newState
+            default:
+                return state
+        }
     }
 
-    const [userInfo, dispatchUserInfo] = useReducer(userInfoReducer, {
-        "connexion": true,
-        "id": 1,
-        "surname": "Rodrigues",
-        "firstname": "Paul",
-        "email": "paul@gmail.com",
-        "picture": "",
-        "is_online": false,
-        "type_user": {
-            "id": 1,
-            "title": "Etudiant"
-        },
-        "description": "Dev web full-stack",
-        "web_site": "paulrdgs.com",
-        "cv": "",
-        "cp": "69007",
-        "city": "Lyon",
-        "birthday": "2000-08-17",
-        "is_conveyed": false,
-        "skills": {
-            "1": "html",
-            "3": "js",
-            "5": "c#",
-            "7": "vba"
-        },
-        "announcements": [
-            {
-                "id": 1,
-                "title": "recherche alternance",
-                "description": "zhfjfvj sggjbdsjvjsh shgsghvf",
-                "publish_date": "2023-02-01T00:00:00",
-                "status": {
-                    "id": 1,
-                    "status": "Privée"
-                },
-                "naf_division_title": "Fabrication de boissons",
-                "job_title": null
-            },
-            {
-                "id": 2,
-                "title": "recherche alternance",
-                "description": "gjkjhg dgfsdssdhgv hjgjhdfgvxc",
-                "publish_date": "2022-12-31T00:00:00",
-                "status": {
-                    "id": 2,
-                    "status": "Disponible"
-                },
-                "naf_division_title": "Fabrication de boissons",
-                "job_title": null
-            }
-        ],
-        "favorites": [],
-        "convs": [],
-        "loc_announcements": [],
-        "rec_announcements": [],
-        "select_announcements": [{
-            "id": 1,
-            "title": "recherche alternance",
-            "description": "zhfjfvj sggjbdsjvjsh shgsghvf",
-            "publish_date": "2023-02-01T00:00:00",
-            "status": {
-                "id": 1,
-                "status": "Privée"
-            },
-            "naf_division_title": "Fabrication de boissons",
-            "job_title": null
-        },
-        {
-            "id": 2,
-            "title": "recherche alternance",
-            "description": "gjkjhg dgfsdssdhgv hjgjhdfgvxc",
-            "publish_date": "2022-12-31T00:00:00",
-            "status": {
-                "id": 2,
-                "status": "Disponible"
-            },
-            "naf_division_title": "Fabrication de boissons",
-            "job_title": null
-        },
-        {
-            "id": 3,
-            "title": "recherche alternance",
-            "description": "gjkjhg dgfsdssdhgv hjgjhdfgvxc",
-            "publish_date": "2022-12-31T00:00:00",
-            "status": {
-                "id": 2,
-                "status": "Disponible"
-            },
-            "naf_division_title": "Fabrication de boissons",
-            "job_title": null
-        },
-        {
-            "id": 4,
-            "title": "recherche alternance",
-            "description": "gjkjhg dgfsdssdhgv hjgjhdfgvxc",
-            "publish_date": "2022-12-31T00:00:00",
-            "status": {
-                "id": 2,
-                "status": "Disponible"
-            },
-            "naf_division_title": "Fabrication de boissons",
-            "job_title": null
-        }],
-        "recent_search": [],
-    })
+    const [userInfo, dispatchUserInfo] = useReducer(userInfoReducer, null)
 
     return (
         <myAppContextUserInfo.Provider value={{

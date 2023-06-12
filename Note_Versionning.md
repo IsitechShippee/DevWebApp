@@ -12,7 +12,8 @@ La maj 0.2 a pour but de réaliser la page d'accueil. Elle se compose :
 
 ### Version 0.2.4
 
- - Réalisation de la page d'accueil final
+ - Page d'accueil fonctionnel (Reste les PopUp)
+ - Plus loader fonctionnel avec la connexion a l'api et le chargement des données
 
 ### Version 0.2.3
 

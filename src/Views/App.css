@@ -1,3 +1,11 @@
+.app .navbar {
+    z-index: 100;
+}
+
+.app :nth-child(n + 2){
+    z-index: 1;
+}
+
 @media screen and (orientation: landscape) {
     .app {
         margin: 0 0 0 calc(5vh + 80px);

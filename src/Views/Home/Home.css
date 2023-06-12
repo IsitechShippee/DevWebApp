@@ -1,65 +1,71 @@
 .home {
-    height: auto;
-    width: 100%;
+  height: auto;
+  width: 100%;
 }
 
-.home img {
-    position: absolute;
-    height: auto;
-    opacity: .1;
-    z-index: -50;
+.home .shippee {
+  position: absolute;
+  height: auto;
+  opacity: 0.1;
+  z-index: -50;
 }
 
 .home .welcome {
-    height: 45vh;
+  height: 45vh;
 }
 
 .home h1.title {
-    position: absolute;
+  position: absolute;
 }
 
 .home h2.title {
-    position: absolute;
+  position: absolute;
 }
 
+.home h2.selection {
+  margin-bottom: 315px;
+}
+
+.home .list {
+  height: 360px;
+}
 
 @media screen and (orientation: landscape) {
+  .home .shippee {
+    top: 8vh;
+    padding-left: 22vw;
+    width: 40vw;
+  }
 
-    .home img {
-        top: 8vh;
-        padding-left: 22vw;
-        width: 40vw;
-    }
+  .home h1.title {
+    top: 18vh;
+    padding-left: 15vw;
+    font-size: 45px;
+  }
 
-    .home h1.title {
-        top: 18vh;
-        padding-left: 15vw;
-        font-size: 45px;
-    }
-
-    .home h2.title {
-        top: 25vh;
-        padding-left: calc(65vw - 300px);
-        font-size: 35px;
-    }
+  .home h2.title {
+    top: 25vh;
+    padding-left: calc(65vw - 300px);
+    font-size: 35px;
+  }
 }
 
 @media screen and (orientation: portrait) {
-    .home img {
-        top: 8vh;
-        padding-left: 15vw;
-        width: 70vw;
-    }
+  .home .shippee {
+    top: 8vh;
+    padding-left: 15vw;
+    width: 70vw;
+  }
 
-    .home h1.title {
-        top: 18vh;
-        padding-left: 12vw;
-        font-size: 40px;
-    }
+  .home h1.title {
+    top: 18vh;
+    padding-left: 12vw;
+    font-size: 40px;
+  }
 
-    .home h2.title {
-        top: 25vh;
-        padding-left: calc(85vw - 260px);
-        font-size: 30px;
-    }
+  .home h2.title {
+    top: 25vh;
+    padding-left: calc(85vw - 260px);
+    font-size: 30px;
+  }
 }
