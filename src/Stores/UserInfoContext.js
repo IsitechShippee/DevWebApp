@@ -24,25 +24,25 @@ export const MyAppContextUserInfoProvider = ({ children }) => {
                 })
 
                 // On parcourt les annonces pour ajouter a l'annonce en question le favori
-                // newState.loc_announcements.forEach(element => {
-                //     if (element.id === action.payload.id) {
-                //         element.favorite = isAdd
-                //     }
-                // })
+                newState.loc_announcements.forEach(element => {
+                    if (element.id === action.payload.id) {
+                        element.favorite = isAdd
+                    }
+                })
 
-                newState.recents_announcements.forEach(element => {
+                newState.recent_announcements.forEach(element => {
                     if (element.id === action.payload.id) {
                         element.favorite = isAdd
                         // console.log(element.id + ' : ' + element.favorite)
                     }
                 })
 
-                // newState.select_announcements.forEach(element => {
-                //     if (element.id === action.payload.id) {
-                //         element.favorite = isAdd
-                //         // console.log(element.id + ' : ' + element.favorite)
-                //     }
-                // })
+                newState.select_announcements.forEach(element => {
+                    if (element.id === action.payload.id) {
+                        element.favorite = isAdd
+                        // console.log(element.id + ' : ' + element.favorite)
+                    }
+                })
 
                 // On ajoute ou retire l'annonce des favoris*
                 if (isAdd) {

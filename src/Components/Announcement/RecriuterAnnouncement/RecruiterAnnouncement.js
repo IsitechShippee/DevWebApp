@@ -29,7 +29,7 @@ function RecruiterAnnouncement(props) {
       "id_annoucement": props.announcement.id
     }
 
-    axios.post('https://localhost:7061/api/Favorite/favorite', sendData)
+    axios.post('https://localhost:7061/api/Favorite/AjoutFavorite', sendData)
     .then((response)=> {
       console.log(response.data)
       userInfo.dispatchUserInfo({ type: 'LOVE', payload: props.announcement })

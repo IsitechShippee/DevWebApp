@@ -3,6 +3,20 @@
 La version 0 a pour but de faire une application fonctionnel répondant au cahier des charges. Elle n'a pas pour but d'être un produit fini, mais simplement fonctionnel.
 L'améliroation pour le rendu finit se fera dans la V1.
 
+## Version 0.3
+
+La maj 0.3 a pour but la réalisation de la page de connexion non final.
+Le but est de rendre la connexion fonctionnel, maintenant le loader en place, afin de permettre de testerr correctement les données ainsi la connexion et deconnexion.
+
+### Version 0.3.1
+
+- Page de connexion faite par Aurel (Login.js/Login.css et SignUp.js/SignUp.css)
+
+### Version 0.3.0
+
+- Préparation de la page de connexion (App.js)
+- Réglage de bug et légère améliroation de truc null
+
 ## Version 0.2
 
 La maj 0.2 a pour but de réaliser la page d'accueil. Elle se compose :

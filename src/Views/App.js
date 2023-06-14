@@ -3,6 +3,7 @@ import { Routes, Route } from 'react-router-dom'
 import { useContext, useState } from 'react'
 import { myAppContextUserInfo } from '../Stores/UserInfoContext';
 
+import Login from './Login/Login'
 import ConnectLoader from './Login/ConnectLoader/ConnectLoader'
 import NavBar from '../Components/NavBar/NavBar'
 import Home from './Home/Home'
@@ -17,14 +18,17 @@ function App() {
 
   const userInfo = useContext(myAppContextUserInfo)
   const [isConnect, setConnect] = useState(false)
+  const [isLoading, setLoading] = useState(false)
+  const [isError, setError] = useState(false)
+  const [ErrorText, setErrorText] = useState('')
+  const [connectInfo, setConnectInfo] = useState(null)
 
   const [isActiveNavBar, setIsActiveNavBar] = useState(0)
 
-    const connected = <div className="app">
-    <NavBar isActive={isActiveNavBar} setIsActive={setIsActiveNavBar}/>
+  const connected = <div className="app">
+    <NavBar isActive={isActiveNavBar} setIsActive={setIsActiveNavBar} />
     <Routes>
-      <Route path="/" element={<Home setIsActiveNavBar={setIsActiveNavBar}/>} />
-      {/* <Route path="/loading" element={<Loader />} /> */}
+      <Route path="/" element={<Home setIsActiveNavBar={setIsActiveNavBar} />} />
       <Route path="/search/*" element={<Search />} />
       <Route path="/newpost/*" element={<NewPost />} />
       <Route path="/chat/*" element={<Chat />} />
@@ -34,13 +38,28 @@ function App() {
     </Routes>
   </div>
 
+  const loading = <Routes>
+    <Route path="*" element={<ConnectLoader
+      setConnect={setConnect}
+      setLoading={setLoading}
+      setError={setError}
+      setUserInfo={userInfo.dispatchUserInfo}
+      connectInfo={connectInfo} />}
+    />
+  </Routes>
+
   const notConnected = <Routes>
-  <Route path="*" element={<ConnectLoader setConnect={setConnect} setUserInfo={userInfo.dispatchUserInfo}/>} />
-  <Route path="/error" element={<Error />} />
-</Routes>
+    <Route path='/' element={<Login
+      setLoading={setLoading}
+      setConnectInfo={setConnectInfo} />}
+    />
+    <Route path="*" element={<Error />} />
+  </Routes>
+
+  const connexion = isLoading ? loading : notConnected
 
   return (
-    isConnect ? connected : notConnected
+    isConnect ? connected : connexion
   );
 }
 

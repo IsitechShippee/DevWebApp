@@ -23,39 +23,24 @@ function Home(props) {
 
       <div className='selection_list'>
 
-        {/* <div className='list'>
-        <h2>Pour vous :</h2>
-        <ListAnnouncement type={'select_announcements'} isViewsMore={true}/>
-      </div> */}
-
-        {/* <div className='list'>
-        <h2>Dans le coin :</h2>
-        <ListAnnouncement type={'loc_announcements'} isViewsMore={true}/>
-      </div> */}
+        <div className='list'>
+          <h2 className='selection'>Pour vous :</h2>
+          <ListAnnouncement type={'select_announcements'} isViewsMore={true} />
+        </div>
 
         <div className='list'>
-          <h2 className='selection'>Posté récemment :</h2>
-          <ListAnnouncement type={'recents_announcements'} isViewsMore={true} setIsActiveNavBar={props.setIsActiveNavBar}/>
+          <h2 className='selection'>Dans le coin :</h2>
+          <ListAnnouncement type={'loc_announcements'} isViewsMore={true} />
         </div>
 
         <div className='list'>
           <h2 className='selection'>Posté récemment :</h2>
-          <ListAnnouncement type={'recents_announcements'} isViewsMore={true} setIsActiveNavBar={props.setIsActiveNavBar}/>
-        </div>
-
-        <div className='list'>
-          <h2 className='selection'>Posté récemment :</h2>
-          <ListAnnouncement type={'recents_announcements'} isViewsMore={true} setIsActiveNavBar={props.setIsActiveNavBar}/>
-        </div>
-
-        <div className='list'>
-          <h2 className='selection'>Posté récemment :</h2>
-          <ListAnnouncement type={'recents_announcements'} isViewsMore={true} setIsActiveNavBar={props.setIsActiveNavBar}/>
+          <ListAnnouncement type={'recent_announcements'} isViewsMore={true} setIsActiveNavBar={props.setIsActiveNavBar} />
         </div>
 
         {/* <div className='list'>
-        <h2>A revoir :</h2>
-        <ListAnnouncement type={'recent_search'} isViewsMore={true}/>
+        <h2 className='selection'>Que vous aimez :</h2>
+        <ListAnnouncement type={'favorites'} isViewsMore={true}/>
       </div> */}
 
       </div>
