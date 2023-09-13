@@ -1,0 +1,38 @@
+.sign_up input.file {
+  background-color: var(--color-black);
+  width: 51px;
+  height: 51px;
+  padding: 0;
+}
+
+.sign_up input.file:hover {
+  background-color: var(--color-black);
+}
+
+.sign_up .content_container {
+  width: 80%;
+  height: 60%;
+  background-color: rgba(0, 0, 0, 0.089);
+  overflow: hidden;
+}
+
+.sign_up .button_nav {
+  width: 80%;
+  height: 51px;
+  position: relative;
+}
+
+.sign_up .button_nav .previous {
+  position: absolute;
+  left: 10%;
+}
+
+.sign_up .button_nav .next {
+  position: absolute;
+  right: 10%; 
+}
+
+.sign_up .button_nav .finish {
+  position: absolute;
+  right: 10%;
+}

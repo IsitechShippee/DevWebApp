@@ -1,0 +1,10 @@
+.sign_up input.file {
+  background-color: var(--color-black);
+  width: 51px;
+  height: 51px;
+  padding: 0;
+}
+
+.sign_up input.file:hover {
+  background-color: var(--color-black);
+}

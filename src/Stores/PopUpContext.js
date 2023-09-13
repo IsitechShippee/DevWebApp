@@ -1,6 +1,6 @@
 import React, { createContext, useReducer } from "react";
 import StudentPopUp from '../Components/AnnouncementPopUp/StudentAnnouncementPopUp/StudentAnnouncementPopUp'
-import RecruiterPopUp from '../Components/AnnouncementPopUp/StudentAnnouncementPopUp/StudentAnnouncementPopUp'
+import RecruiterPopUp from '../Components/AnnouncementPopUp/RecruiterAnnouncementPopUp/RecruiterAnnouncementPopUp'
 
 export const myAppContextPopUp = createContext({
     popUp: {
@@ -15,7 +15,7 @@ export const myAppContextPopUp = createContext({
 export const MyAppContextPopUpProvider = ({ children }) => {
 
     const popUpReducer = (state, action) => {
-        console.log(state)
+        console.log('PopUpContext : ' + action.type + ' - Payload : ', action.payload)
         switch (action.type) {
             case 'HOME':
                 switch (action.payload.type) {
@@ -23,15 +23,22 @@ export const MyAppContextPopUpProvider = ({ children }) => {
                         return {
                             ...state,
                             home: {
-                                component: <StudentPopUp announcement={action.payload.value} ></StudentPopUp>,
+                                component: <StudentPopUp />,
                                 value: action.payload.value,
                             }
                         }
                     case 'recruiter':
+                        console.log({
+                            ...state,
+                            home: {
+                                component: <RecruiterPopUp />,
+                                value: action.payload.value,
+                            }
+                        })
                         return {
                             ...state,
                             home: {
-                                component: <RecruiterPopUp announcement={action.payload.value}></RecruiterPopUp>,
+                                component: <RecruiterPopUp />,
                                 value: action.payload.value,
                             }
                         }

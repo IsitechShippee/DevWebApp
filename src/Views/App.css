@@ -1,19 +1,43 @@
 .app .navbar {
-    z-index: 100;
+  z-index: 100;
 }
 
-.app :nth-child(n + 2){
-    z-index: 1;
+.app :nth-child(n + 2) {
+  z-index: 1;
+}
+
+.PopUp {
+  position: fixed;
+  z-index: 1000;
+  top: 5vh;
+  border-radius: 25px;
+  background-color: var(--color-clear-pink2);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 @media screen and (orientation: landscape) {
-    .app {
-        margin: 0 0 0 calc(5vh + 80px);
-    }
+  .app {
+    margin: 0 0 0 calc(5vh + 80px);
+  }
+
+  .PopUp {
+    width: calc(100vw - 80px - 10vw);
+    height: 90vh;
+    left: calc(80px + 5vw);
+  }
 }
 
 @media screen and (orientation: portrait) {
-    .app {
-        margin: 0;
-    }
+  .app {
+    margin: 0;
+  }
+
+  .PopUp {
+    width: 90vw;
+    height: calc(90vh - 10vw);
+    left: 5vw;
+  }
 }

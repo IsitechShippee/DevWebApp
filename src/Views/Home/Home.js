@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { myAppContextUserInfo } from '../../Stores/UserInfoContext'
 import { myAppContextPopUp } from '../../Stores/PopUpContext'
 import Pictures from '../../Pictures/Pictures'
@@ -10,7 +10,15 @@ function Home(props) {
   const userInfoContext = useContext(myAppContextUserInfo)
   const popUpContext = useContext(myAppContextPopUp)
 
-  console.log()
+  const [isPopUp, setIsPopUp] = useState(false)
+
+  useEffect(() => {
+    if (popUpContext.popUp.home.value) {
+      setIsPopUp(true)
+    } else {
+      setIsPopUp(false)
+    }
+  }, [popUpContext])
 
   return (
     <div className='home'>
@@ -25,12 +33,12 @@ function Home(props) {
 
         <div className='list'>
           <h2 className='selection'>Pour vous :</h2>
-          <ListAnnouncement type={'select_announcements'} isViewsMore={true} />
+          <ListAnnouncement type={'select_announcements'} isViewsMore={true} setIsActiveNavBar={props.setIsActiveNavBar} />
         </div>
 
         <div className='list'>
           <h2 className='selection'>Dans le coin :</h2>
-          <ListAnnouncement type={'loc_announcements'} isViewsMore={true} />
+          <ListAnnouncement type={'loc_announcements'} isViewsMore={true} setIsActiveNavBar={props.setIsActiveNavBar} />
         </div>
 
         <div className='list'>
@@ -38,13 +46,8 @@ function Home(props) {
           <ListAnnouncement type={'recent_announcements'} isViewsMore={true} setIsActiveNavBar={props.setIsActiveNavBar} />
         </div>
 
-        {/* <div className='list'>
-        <h2 className='selection'>Que vous aimez :</h2>
-        <ListAnnouncement type={'favorites'} isViewsMore={true}/>
-      </div> */}
-
       </div>
-      {/* {popUpContext.popUp.home.value && popUpContext.popUp.home.component} */}
+      {isPopUp && popUpContext.popUp.home.component}
 
     </div>
   )

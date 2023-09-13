@@ -1,0 +1,75 @@
+.search {
+  display: grid;
+  height: 100vh;
+  grid-template-columns: auto 10px 55px;
+  transition: all 0.3s ease-in-out;
+}
+
+.search.active {
+  grid-template-columns: auto 10px 40%;
+}
+
+.search span {
+  align-self: center;
+  justify-self: center;
+  width: 2px;
+  height: 98%;
+  background-color: transparent;
+  transition: all .3s ease-in-out;
+}
+
+.search.active span {
+  background-color: black;
+}
+
+.search.active .filter_button img {
+    transform: scaleX(-1)
+}
+
+.search .filters .filter_button {
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.search .filter_button img {
+  width: 45px;
+  transition: all .3s ease-in-out;
+}
+
+.search .title{
+  position: absolute;
+  top: 0;
+  right: 15%;
+}
+
+
+.search .filter_list select{
+  width: 98%;;
+  background-color: var(--color-clear-pink);
+  border: none;
+  border-radius: 10px;
+  padding: 2px 10px;
+}
+
+.search .filter_list select:hover{
+  background-color: var(--color-clear-pink2);
+}
+
+
+.search .validation{
+  position: relative;
+  display: flex;
+  justify-content: space-around;
+  /* bottom: 0; */
+  width: 100%;
+}
+
+.search .filters button{
+  background-color: var(--color-clear-pink);
+  padding: 5px 10px;
+  border-radius: 15px;
+}
+
+
+
+

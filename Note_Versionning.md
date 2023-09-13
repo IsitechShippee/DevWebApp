@@ -3,6 +3,16 @@
 La version 0 a pour but de faire une application fonctionnel répondant au cahier des charges. Elle n'a pas pour but d'être un produit fini, mais simplement fonctionnel.
 L'améliroation pour le rendu finit se fera dans la V1.
 
+## Version 0.4
+
+La maj 0.4 a pour but l'ajout de nombreuse fonctionnalité important : la connexion, l'inscription, et d'autre page fonctionnel. Elle est la dernière version avant la V1.
+
+### Version 0.4.1
+
+- Page de connexion fonctionnel (Login.js/Login.css)
+- Page d'inscription en partie fonctionnel (SignUp.js/SignUp.css)
+- Nombres d'autre ajout de fonctionnalité et corretion de bug
+
 ## Version 0.3
 
 La maj 0.3 a pour but la réalisation de la page de connexion non final.

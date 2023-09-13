@@ -17,21 +17,32 @@ function ConnectLoader(props) {
   // }, [data, error, loaded, props])
 
   useEffect(() => {
-    axios.get('https://localhost:7061/api/User/testconnect?id=' + props.connectInfo.id + '&psw=' + props.connectInfo.psw)
+    console.log(props.connectInfo.id, props.connectInfo.psw)
+    axios.get('https://localhost:7061/api/User/connect?id=' + props.connectInfo.id + '&psw=' + props.connectInfo.psw)
       .then((response) => {
-        if(response.data.connexion == false) {
+        console.log(response)
+        if (response.data.connexion === "false") {
           props.setError(response.data.erreur)
-        }else{
+          setTimeout(() => {
+            props.setLoading(false)
+            props.setConnect(false)
+          }, 500);
+        } else {
           setData(response.data)
+          props.setUserInfo({ type: 'CONNECT', payload: data })
+          setTimeout(() => {
+            props.setLoading(false)
+            props.setConnect(true)
+          }, 1000);
         }
       })
-      .then(() => {
-        props.setUserInfo({ type: 'CONNECT', payload: data })
-        setTimeout(() => { 
-          props.setLoading(false)
-          props.setConnect(true) 
-        }, 500);
-      })
+      // .then(() => {
+      //   props.setUserInfo({ type: 'CONNECT', payload: data })
+      //   setTimeout(() => {
+      //     props.setLoading(false)
+      //     props.setConnect(true)
+      //   }, 500);
+      // })
       .catch((error) => {
         props.setError(error.message)
       })

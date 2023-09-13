@@ -35,4 +35,7 @@
     visibility: none;
 }
 
-
+button{
+  cursor: pointer;
+  background-color: transparent;
+}

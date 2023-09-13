@@ -10,15 +10,29 @@ function ListAnnouncement(props) {
     const userInfo = useContext(myAppContextUserInfo)
 
     const selection = (announcement, index) => {
-        switch (userInfo.userInfo.type_user.title) {
-            case 'Recruteur': {
-                return (<StudentAnnouncement key={index} announcement={announcement} />)
+        if (props.type === "annoucements") {
+            switch (userInfo.userInfo.type_user.title) {
+                case 'Recruteur': {
+                    return (<RecruiterAnnouncement key={index} announcement={announcement} type={props.type} />)
+                }
+                case 'Etudiant': {
+                    return (<StudentAnnouncement key={index} announcement={announcement} />)
+                }
+                default: {
+                    return null
+                }
             }
-            case 'Etudiant': {
-                return (<RecruiterAnnouncement key={index} announcement={announcement} type={props.type}/>)
-            }
-            default: {
-                return null
+        } else {
+            switch (userInfo.userInfo.type_user.title) {
+                case 'Recruteur': {
+                    return (<StudentAnnouncement key={index} announcement={announcement} />)
+                }
+                case 'Etudiant': {
+                    return (<RecruiterAnnouncement key={index} announcement={announcement} type={props.type} />)
+                }
+                default: {
+                    return null
+                }
             }
         }
     }

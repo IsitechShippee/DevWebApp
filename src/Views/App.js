@@ -1,7 +1,7 @@
 import './App.css';
 import { Routes, Route } from 'react-router-dom'
 import { useContext, useState } from 'react'
-import { myAppContextUserInfo } from '../Stores/UserInfoContext';
+import { myAppContextUserInfo } from '../Stores/UserInfoContext'
 
 import Login from './Login/Login'
 import ConnectLoader from './Login/ConnectLoader/ConnectLoader'
@@ -19,8 +19,8 @@ function App() {
   const userInfo = useContext(myAppContextUserInfo)
   const [isConnect, setConnect] = useState(false)
   const [isLoading, setLoading] = useState(false)
-  const [isError, setError] = useState(false)
-  const [ErrorText, setErrorText] = useState('')
+  const [error, setError] = useState(null)
+  // const [ErrorText, setErrorText] = useState('')
   const [connectInfo, setConnectInfo] = useState(null)
 
   const [isActiveNavBar, setIsActiveNavBar] = useState(0)
@@ -49,9 +49,11 @@ function App() {
   </Routes>
 
   const notConnected = <Routes>
-    <Route path='/' element={<Login
+    <Route path='/*' element={<Login
       setLoading={setLoading}
-      setConnectInfo={setConnectInfo} />}
+      setConnectInfo={setConnectInfo}
+      error={error}
+    />}
     />
     <Route path="*" element={<Error />} />
   </Routes>

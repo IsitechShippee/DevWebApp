@@ -1,0 +1,62 @@
+.user {
+  /* display: flex; */
+  width: 100%;
+}
+
+.user .user_info {
+  position: absolute;
+  background-color: var(--color-pink);
+  height: 426px;
+  top: 0;
+}
+
+.user .user_info h1 {
+  position: absolute;
+  top: 50px;
+  /* left: calc(5vh + 416px); */
+  left: 386px;
+}
+
+.user .user_content {
+  width: 80%;
+  height: 120%;
+  background-color: var(--color-clear-pink);
+  margin: 100px 0 0 75px;
+  border-radius: 71px;
+}
+
+.user .user_info .profil_picture {
+  position: absolute;
+  top: 0px;
+  /* left: calc(5vh + 80px); */
+  left: 0;
+  width: 286px;
+  height: 286px;
+  border-radius: 71px;
+  margin: 50px 25px 0 25px;
+}
+
+.user .user_info .description {
+  margin-left: 261px;
+  padding-top: 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.user .edit_button{
+    width: 28px;
+    height: 28px;
+    position: absolute;
+    top: 140px;
+    right: calc(20%);
+    cursor: pointer
+}
+
+.user .user_info p{
+    padding: 100px 20px 0 20px;
+}
+
+.user .user_list{
+  padding-top: 1000px;
+}

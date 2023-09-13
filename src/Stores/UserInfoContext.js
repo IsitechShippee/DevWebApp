@@ -8,7 +8,7 @@ export const myAppContextUserInfo = createContext({
 export const MyAppContextUserInfoProvider = ({ children }) => {
 
     const userInfoReducer = (state, action) => {
-        console.log('Demande : ' + action.type + ' - Payload : ', action.payload)
+        console.log('UserInfoContext : ' + action.type + ' - Payload : ', action.payload)
         switch (action.type) {
             case 'CONNECT':
                 return action.payload

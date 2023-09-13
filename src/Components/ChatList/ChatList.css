@@ -1,0 +1,47 @@
+.ChatList {
+  width: 30vw;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding-top: 15px;
+}
+
+.ChatList .chat_bubble {
+  height: 62px;
+  padding: 8px;
+  background: linear-gradient(
+    113deg,
+    var(--color-clear-pink),
+    var(--color-clear-pink2)
+  );
+  border-radius: 15px;
+  cursor: pointer;
+  display: flex;
+  gap: 8px;
+}
+
+.ChatList .chat_bubble.unread {
+  background: linear-gradient(
+    113deg,
+    var(--color-clear-pink2),
+    var(--color-pink)
+  );
+  font-weight: 600;
+}
+
+.ChatList .chat_bubble p {
+  width: calc(30vw - 86px);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.ChatList .profil {
+  display: flex;
+}
+
+.ChatList .chat_bubble img {
+  width: 62px;
+  height: 62px;
+  border-radius: 12px;
+}
