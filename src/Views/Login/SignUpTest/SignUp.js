@@ -59,8 +59,6 @@ function SignUp() {
         setStudentInfo({ ...studentInfo, 'email': event.target.value })
         break;
       case 'password':
-        let hash = SHA3(event.target.value, { outputLength: 512 })
-        console.log(hash)
         setStudentInfo({ ...studentInfo, 'password': event.target.value })
         break;
       case 'password2':
@@ -84,7 +82,6 @@ function SignUp() {
       case 'city':
         axios.get('https://geo.api.gouv.fr/communes?nom=' + event.target.value + '&boost=population&limit=10')
           .then((response) => {
-            console.log(response)
             setCityList(response.data)
             setStudentInfo({ ...studentInfo, 'cp': response.data[0].codesPostaux[0] })
           })
@@ -116,9 +113,9 @@ function SignUp() {
       return choice
     }
     if (view > viewMax) {
-      return finish_rendu
+      return finish_rendu()
     }
-    switch (type) {
+    else switch (type) {
       case 'student':
         return student_rendu()
       case 'recruiter':
@@ -219,7 +216,7 @@ function SignUp() {
   const finish_rendu = () => {
     return <>
       <h3>Votre compte à bien été créer ! Vous pouvez vous connecter :</h3>
-      <Link to='/' className='little_button'></Link>
+      <Link to='/' className='little_button'>Connexion</Link>
     </>
   }
 
@@ -271,16 +268,19 @@ function SignUp() {
     } else {
       setIsCompleted([true, false, false, false, false])
     }
-    // setIsCompleted([true, true, true, true, true])
   }, [studentInfo])
 
   const choice = (
     <>
-      <h2 className='psw'>Vous êtes:</h2>
-      <input type='radio' name='user-type' onChange={() => { setType('student'); setIsCompleted([true]); setViewMax(4) }} />
-      <label>Etudiant</label>
-      <input type='radio' name='user-type' onChange={() => { setType('recruiter'); getCompanyList(); setIsCompleted([true]); setViewMax(1) }} />
-      <label>Recruteur</label>
+      <h2>Vous êtes:</h2>
+      <div className='radio'>
+        <label>Etudiant</label>
+        <input type='radio' name='user-type' onChange={() => { setType('student'); setIsCompleted([true]); setViewMax(4) }} />
+      </div>
+      <div className='radio'>
+        <label>Recruteur</label>
+        <input type='radio' name='user-type' onChange={() => { setType('recruiter'); getCompanyList(); setIsCompleted([true]); setViewMax(1) }} />
+      </div>
     </>
   )
 
@@ -299,20 +299,28 @@ function SignUp() {
           && studentInfo.birthday
           && studentInfo.is_conveyed
         ) {
-          // let info = {password: sha256(studentInfo.password), ...studentInfo} 
-          // console.log(info)
-          // axios.post('https://localhost:7061/api/User/AddStudent', studentInfo)
-          //   .then((result) => {
-          //     if (result.status == 200) {
-          //       setIsAjout(true);
-          //     } else {
-          //       setIsAjout(false)
-          //       setError('JSP')
-          //     }
-          //   })
-          //   .catch((error) => {
-          //     setError(error.message)
-          //   })
+          let info = { password: SHA3(studentInfo.password), ...studentInfo }
+          console.log('info : ', info)
+          axios.post('https://localhost:7061/api/User/AddStudent', studentInfo)
+            .then((result) => {
+              console.log(result)
+              if (result.status === 200) {
+                if (result.data === 'creer') {
+                  setIsAjout(true)
+                  setView(view + 1)
+                } else if (result.data === 'existe') {
+                  setError('Un compte existe déjà avec cette adresse mail')
+                } else {  
+                  setError('JSP')
+                }
+              } else {
+                setIsAjout(false)
+                setError('JSP')
+              }
+            })
+            .catch((error) => {
+              setError(error.message)
+            })
         } else {
           setError('Veuillez renseigner tous les champs (Sauf ceux possédant une *) !!')
         }
@@ -344,6 +352,7 @@ function SignUp() {
 
         {isFinishButton() && <button className='finish' onClick={validation}>Terminer</button>}
       </div>
+
       {error && <div>{error}</div>}
 
     </div>

@@ -1,0 +1,5 @@
+<svg className="HomeSVG" id="Layer_1" style="enable-background:new 0 0 32 32;" version="1.1" viewBox="0 0 32 32"
+	xml:space="preserve" xmlns="http://www.w3.org/2000/svg"
+	xmlns:xlink="http://www.w3.org/1999/xlink"><style type="text/css">
+	.st0{fill:none;stroke:#000000;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+</style><g><path class="st0" d="M22.4,31H3.2c-1,0-1.8-0.8-1.8-1.8V2.8c0-1,0.8-1.8,1.8-1.8h19.2c1,0,1.8,0.8,1.8,1.8v26.4   C24.2,30.2,23.4,31,22.4,31z"/><line class="st0" x1="5.5" x2="14.4" y1="5.1" y2="5.1"/><line class="st0" x1="5.5" x2="17.4" y1="9.1" y2="9.1"/><line class="st0" x1="5.5" x2="20.1" y1="13.2" y2="13.2"/><line class="st0" x1="5.5" x2="20.1" y1="17.3" y2="17.3"/><polygon class="st0" points="30.6,4 30.6,26.4 28.8,30.2 27,26.4 27,4  "/><path class="st0" d="M27,4V2.2C27,1.6,27.5,1,28.2,1h1.2c0.7,0,1.2,0.6,1.2,1.2V4H27z"/><circle class="st0" cx="8.3" cy="24.1" r="2.8"/><circle class="st0" cx="17.4" cy="24.1" r="2.8"/></g></svg>

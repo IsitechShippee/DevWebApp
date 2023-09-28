@@ -10,7 +10,6 @@ import SignUp from './SignUpTest/SignUp'
 function Login(props) {
 
     const connect = (id, psw) => {
-        // props.setConnectInfo({ id: 'sophie.dupont@gmail.com', psw: 'test' })
         console.log(id, psw)
         props.setConnectInfo({ id: id, psw: psw })
         props.setLoading(true)
@@ -20,7 +19,7 @@ function Login(props) {
         <div className='login'>
 
             <Routes>
-                <Route path="/*" element={<SignIn connect={connect} error={props.error}/>} />
+                <Route path="/*" element={<SignIn connect={connect} error={props.error} setError={props.setError}/>} />
                 <Route path="/sign-up" element={<SignUp />} />
             </Routes>
         </div>

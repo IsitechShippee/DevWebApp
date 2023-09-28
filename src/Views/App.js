@@ -52,6 +52,7 @@ function App() {
     <Route path='/*' element={<Login
       setLoading={setLoading}
       setConnectInfo={setConnectInfo}
+      setError={setError}
       error={error}
     />}
     />

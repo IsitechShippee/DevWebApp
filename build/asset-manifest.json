@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/static/css/main.31f40e86.css",
+    "main.js": "/static/js/main.1c1435b3.js",
+    "static/media/Profils.png": "/static/media/Profils.2dfc72600fded3064c05.png",
+    "static/media/ActifLove.png": "/static/media/ActifLove.846992865426aecd384a.png",
+    "static/media/sncf.png": "/static/media/sncf.e5cb6da852a09dbff1ea.png",
+    "static/media/Search.png": "/static/media/Search.af212420d875c0760df5.png",
+    "static/media/Play.png": "/static/media/Play.1339c39570e4c1ec7bc0.png",
+    "static/media/Loc.png": "/static/media/Loc.d6847c1e526e81a5dbfe.png",
+    "static/media/Logo_Shippee.png": "/static/media/Logo_Shippee.a92d9ede91bf4d0fecfb.png",
+    "static/media/Edit.png": "/static/media/Edit.3f3bd5653dbdda4ee73b.png",
+    "static/media/Send.png": "/static/media/Send.6394f08d2734f7a5aae7.png",
+    "static/media/Love.png": "/static/media/Love.e729fa3dd59aac56e9b5.png",
+    "static/media/HomeSVG.svg": "/static/media/HomeSVG.b850de6a4ad22e223388ca1386bf87fb.svg",
+    "index.html": "/index.html",
+    "main.31f40e86.css.map": "/static/css/main.31f40e86.css.map",
+    "main.1c1435b3.js.map": "/static/js/main.1c1435b3.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.31f40e86.css",
+    "static/js/main.1c1435b3.js"
+  ]
+}

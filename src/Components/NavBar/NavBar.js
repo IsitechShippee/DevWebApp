@@ -17,7 +17,7 @@ function NavBar(props) {
         <h1>Accueil</h1>
       </Link>
       <Link to='/search' onClick={() => acitveElement(1)} className={props.isActive === 1 ? 'active' : ''}>
-        <SVG.Home />
+        <SVG.Search />
         <h1>Rechercher</h1>
       </Link>
       <Link to='/newpost' onClick={() => acitveElement(2)} className={props.isActive === 2 ? 'active' : ''}>

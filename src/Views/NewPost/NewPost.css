@@ -1,0 +1,13 @@
+.newpost{
+    height: 100vh;
+}
+
+.newpost textarea{
+    background: var(--color-black);
+    border-radius: 30px;
+    width: 80% !important;
+    height: 40vh !important;
+    padding: 2.5%;
+    font-size: 18px;
+    color: var(--color-clear-pink)
+}

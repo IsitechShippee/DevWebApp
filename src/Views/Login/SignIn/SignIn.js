@@ -6,13 +6,16 @@ import Picture from '../../../Pictures/Pictures'
 
 function SignIn(props) {
 
-
-    const [id, setId] = useState('') 
-    const [psw, setPsw] = useState('') 
+    // const [error, setError] = useState('')
+    const [id, setId] = useState('')
+    const [psw, setPsw] = useState('')
 
     const connect = () => {
-        console.log(id, psw)
-        props.connect(id, psw)
+        if (id === '' || psw === '') {
+            props.setError('Veuillez remplir tous les champs !!')
+        } else {
+            props.connect(id, psw)
+        }
     }
 
     return (
@@ -24,11 +27,11 @@ function SignIn(props) {
 
             <div className='content_sign_in'>
                 <div className='username'>
-                    <input type='text' placeholder='Idantifiant' name='username' value={id} onChange={(e) => {setId(e.target.value)}}/>
+                    <input type='text' placeholder='Idantifiant' name='username' value={id} onChange={(e) => { setId(e.target.value) }} />
                 </div>
 
                 <div className='password'>
-                    <input type='password' placeholder='Mot de passe' name='password' value={psw} onChange={(e) => {setPsw(e.target.value)}}/>
+                    <input type='password' placeholder='Mot de passe' name='password' value={psw} onChange={(e) => { setPsw(e.target.value) }} />
                     <Link to='/sign-up' className='little_button forget_psw'><img src={Picture.Play} alt='play' />Mot de passe oublié</Link>
                 </div>
 
@@ -43,6 +46,8 @@ function SignIn(props) {
                         <img src={Picture.Play} alt='play' />Creer un compte
                     </Link>
                 </div>
+
+                {/* {error && <div>{error}</div>} */}
             </div>
         </div>
     )
