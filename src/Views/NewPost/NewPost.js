@@ -56,7 +56,7 @@ function NewPost() {
     ) {
       const info = { ...announcement, user_id: userInfoContext.userInfo.id, type_id: userInfoContext.userInfo.type_user.id }
       console.log('info : ', info)
-      axios.post('https://localhost:7061/api/Annoucement/AddAnnouncement', info)
+      axios.post(process.env.REACT_APP_API_URL + '/api/Annoucement/AddAnnouncement', info)
         .then((result) => {
           console.log(result)
           if (result.status === 200) {

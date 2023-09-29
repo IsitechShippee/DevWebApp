@@ -221,7 +221,7 @@ function SignUp() {
   }
 
   const getCompanyList = () => {
-    axios.get('https://localhost:7061/api/Company/list_company')
+    axios.get(process.env.REACT_APP_API_URL + '/api/Company/list_company')
       .then((response) => {
         console.log(response.data)
         let list = []
@@ -301,7 +301,7 @@ function SignUp() {
         ) {
           let info = { password: SHA3(studentInfo.password), ...studentInfo }
           console.log('info : ', info)
-          axios.post('https://localhost:7061/api/User/AddStudent', studentInfo)
+          axios.post(process.env.REACT_APP_API_URL + '/api/User/AddStudent', studentInfo)
             .then((result) => {
               console.log(result)
               if (result.status === 200) {

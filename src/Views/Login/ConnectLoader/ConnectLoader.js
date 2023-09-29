@@ -7,18 +7,9 @@ function ConnectLoader(props) {
 
   const [data, setData] = useState(null);
 
-  // const { cancel, data, error, loaded } = useAxios('https://localhost:7061/api/User/testconnect?id=' + "sophie.dupont@gmail.com" + '&psw=' + "test", 'get', null)
-
-  // useEffect(() => {
-  //   if (loaded) {
-  //     props.setUserInfo({ type: 'CONNECT', payload: data })
-  //     setTimeout(() => { props.setConnect(true) }, 500);
-  //   }
-  // }, [data, error, loaded, props])
-
   useEffect(() => {
     console.log(props.connectInfo.id, props.connectInfo.psw)
-    axios.get('https://localhost:7061/api/User/connect?id=' + props.connectInfo.id + '&psw=' + props.connectInfo.psw)
+    axios.get(process.env.REACT_APP_API_URL + '/api/User/connect?id=' + props.connectInfo.id + '&psw=' + props.connectInfo.psw)
       .then((response) => {
         console.log(response)
         if (response.data.connexion === "false") {

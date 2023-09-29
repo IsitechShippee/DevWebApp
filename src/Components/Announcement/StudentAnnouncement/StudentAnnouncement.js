@@ -23,7 +23,7 @@ function StudentAnnoucement(props) {
       "id_annoucement": props.announcement.id
     }
 
-    axios.post('https://localhost:7061/api/Favorite/AjoutFavorite', sendData)
+    axios.post(process.env.REACT_APP_API_URL + '/api/Favorite/AjoutFavorite', sendData)
       .then((response) => {
         console.log(response.data)
         userInfo.dispatchUserInfo({ type: 'LOVE', payload: props.announcement })

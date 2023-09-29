@@ -29,7 +29,7 @@ function SignUp() {
           && studentInfo.birthday
           && studentInfo.is_conveyed
         ) {
-          axios.post('https://localhost:7061/api/User/AddStudent', studentInfo)
+          axios.post(process.env.REACT_APP_API_URL + '/api/User/AddStudent', studentInfo)
             .catch((error) => {
               setError(error.message)
             })
@@ -94,7 +94,7 @@ function SignUp() {
   }
 
   const getCompanyList = () => {
-    axios.get('https://localhost:7061/api/Company/list_company')
+    axios.get(process.env.REACT_APP_API_URL + '/api/Company/list_company')
       .then((response) => {
         console.log(response.data)
         let list = []
