@@ -13,6 +13,7 @@ function NewPost() {
   const userInfoContext = useContext(myAppContextUserInfo)
 
   const [announcement, setAnnoucement] = useState({ title: '', description: '', division_naf_id: null, diplome_id: null, skills: [] })
+  const [donnee, setDonnee] = useState({ skills: null, diplome: null, naf: null })
   const [error, setError] = useState(null)
 
   const [isLoading, setIsLoading] = useState(false)
@@ -25,6 +26,7 @@ function NewPost() {
     switch (event.target.id) {
       case 'title':
         setAnnoucement({ ...announcement, 'title': event.target.value })
+        getDonnee()
         break;
       case 'description':
         setAnnoucement({ ...announcement, 'description': event.target.value })
@@ -97,7 +99,22 @@ function NewPost() {
   }
 
   const isFinishButton = () => {
-    return view >= viewMax && isCompleted[viewMax]
+    return view === viewMax 
+    //&& isCompleted[viewMax]
+  }
+
+  const getDonnee = () => {
+    axios.get(process.env.REACT_APP_API_URL + '/api/Skill/listSkill')
+      .then((responseSkills) => {
+        axios.get(process.env.REACT_APP_API_URL + '/api/Diplome/list_diplome')
+          .then((responseDiplome) => {
+            axios.get(process.env.REACT_APP_API_URL + '/api/Naf/list_naf_section_division')
+              .then((responseNaf) => {
+                setDonnee({ skills: responseSkills.data, diplome: responseDiplome.data, naf: responseNaf.data })
+              })
+              .then(console.log(donnee))
+          })
+      })
   }
 
   const form_rendu = () => {
@@ -107,29 +124,63 @@ function NewPost() {
           <>
             <div className='info_content'>
               <h2 className='title'>Titre :</h2>
-              <input className='text' type='text' id='title' filename={announcement.title} onChange={updateInfo}></input>
+              <input className='text' type='text' id='title' value={announcement.title} onChange={updateInfo}></input>
             </div>
 
             <div className='info_content'>
               <h2 className='description'>Description :</h2>
-              <textarea className='text' type='text' id='description' filename={announcement.description} onChange={updateInfo}></textarea>
+              <textarea className='text' type='text' id='description' value={announcement.description} onChange={updateInfo}></textarea>
             </div>
           </>
         )
       case 1:
-        return (
-          <>
-            <div className='info_content'>
-              <h2 className='title'>Titre :</h2>
-              <input className='text' type='text' id='title' filename={announcement.title} onChange={updateInfo}></input>
-            </div>
+        if (donnee.skills && donnee.diplome && donnee.naf) {
+          return (
+            <>
+              <div className='info_content'>
+                <h2 className='naf'>Domaine d'activité :</h2>
+                <input list="naf" name="naf" placeholder="Domaine d'activité" onChange={updateInfo} />
+                <datalist id="naf">
+                  {
+                    donnee.naf.map((element, index) => (
+                      element.naf_division.map((el, i) => (
+                        <option key={el.id} value={el.title}></option>
+                      ))
 
-            <div className='info_content'>
-              <h2 className='description'>Description :</h2>
-              <textarea className='text' type='text' id='description' filename={announcement.description} onChange={updateInfo}></textarea>
-            </div>
-          </>
-        )
+                    ))
+                  }
+                </datalist>
+              </div>
+
+              <div className='info_content'>
+                <h2 className='diplome'>Diplome possédé :</h2>
+                <input list="diplome" name="diplome" placeholder="Diplome" onChange={updateInfo} />
+                <datalist id="diplome">
+                  {
+                    donnee.diplome.map((element, index) => (
+                      <option key={element.id} value={element.diplome}></option>
+                    ))
+                  }
+                </datalist>
+              </div>
+
+              <div className='info_content'>
+                <h2 className='skills'>Vos compétences :</h2>
+                <input list="skills" name="skills" placeholder="Compétence" onChange={updateInfo} />
+                <datalist id="skills">
+                  {
+                    donnee.skills.map((element, index) => (
+                      <option key={element.id} value={element.title}></option>
+                    ))
+                  }
+                </datalist>
+              </div>
+            </>
+          )
+        } else {
+          return (<></>)
+        }
+
       case 2:
         return (
           <></>
@@ -154,6 +205,10 @@ function NewPost() {
     }
   }
 
+  const isPrecButton = () => {
+    return view > 0 && view <= viewMax 
+  }
+
   return (
     <div className='newpost'>
       <div className='new'>
@@ -165,7 +220,7 @@ function NewPost() {
       </div>
 
       <div className='button_nav'>
-        {view > 0 && <button className='previous' onClick={() => setView(view - 1)}>Précedent</button>}
+        {isPrecButton() && <button className='previous' onClick={() => setView(view - 1)}>Précedent</button>}
 
         {isNextButton() && <button className='next' onClick={() => setView(view + 1)}>Suivant</button>}
 

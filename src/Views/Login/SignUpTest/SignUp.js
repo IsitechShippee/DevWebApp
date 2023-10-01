@@ -172,7 +172,7 @@ function SignUp() {
 
             <div className='info_content'>
               <h2 className='description'>Une description :</h2>
-              <input className='description' type='text' placeholder='Décrivez vous ...' id='description' value={studentInfo.description} onChange={updateInfo}></input>
+              <textarea className='description' type='text' placeholder='Décrivez vous ...' id='description' value={studentInfo.description} onChange={updateInfo}></textarea>
             </div>
 
             <div className='info_content'>
@@ -199,7 +199,7 @@ function SignUp() {
               <h2 className='conveyed'>Êtes vous véhiculé :</h2>
               <input type='radio' name='user-type' id='is_conveyed_true' value={studentInfo.is_conveyed} onChange={updateInfo} />
               <label>Oui</label>
-              <input type='radio' name='user-type' id='is_conveyed_false' onChange={updateInfo} />
+              <input type='radio' name='user-type' id='is_conveyed_false' value={!studentInfo.is_conveyed} onChange={updateInfo} />
               <label>Non</label>
             </div>
           </>
@@ -285,6 +285,7 @@ function SignUp() {
   )
 
   const validation = () => {
+    console.log(studentInfo)
     setView(view + 1)
     switch (type) {
       case 'student':
@@ -299,7 +300,7 @@ function SignUp() {
           && studentInfo.birthday
           && studentInfo.is_conveyed
         ) {
-          let info = { password: SHA3(studentInfo.password), ...studentInfo }
+          let info = { ...studentInfo, password: SHA3(studentInfo.password)}
           console.log('info : ', info)
           axios.post(process.env.REACT_APP_API_URL + '/api/User/AddStudent', studentInfo)
             .then((result) => {
@@ -310,7 +311,7 @@ function SignUp() {
                   setView(view + 1)
                 } else if (result.data === 'existe') {
                   setError('Un compte existe déjà avec cette adresse mail')
-                } else {  
+                } else {
                   setError('JSP')
                 }
               } else {

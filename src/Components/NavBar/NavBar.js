@@ -22,7 +22,7 @@ function NavBar(props) {
       </Link>
       <Link to='/newpost' onClick={() => acitveElement(2)} className={props.isActive === 2 ? 'active' : ''}>
         <SVG.Add />
-        <h1>NewPost</h1>
+        <h1>Poster</h1>
       </Link>
       <Link to='/chat' onClick={() => acitveElement(3)} className={props.isActive === 3 ? 'active' : ''}>
         <SVG.Chat />

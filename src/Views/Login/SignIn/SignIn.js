@@ -27,7 +27,7 @@ function SignIn(props) {
 
             <div className='content_sign_in'>
                 <div className='username'>
-                    <input type='text' placeholder='Idantifiant' name='username' value={id} onChange={(e) => { setId(e.target.value) }} />
+                    <input type='text' placeholder='Identifiant' name='username' value={id} onChange={(e) => { setId(e.target.value) }} />
                 </div>
 
                 <div className='password'>

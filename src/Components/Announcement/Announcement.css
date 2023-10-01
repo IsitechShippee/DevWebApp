@@ -30,6 +30,8 @@
 }
 
 .announcement .title {
+    position: initial !important;
+    /* top: 80px !important; */
     text-align: center;
     font-size: 16px;
     font-weight: 500;
