@@ -23,22 +23,15 @@ export const MyAppContextPopUpProvider = ({ children }) => {
                         return {
                             ...state,
                             home: {
-                                component: <StudentPopUp />,
+                                component: <StudentPopUp page={'home'} />,
                                 value: action.payload.value,
                             }
                         }
                     case 'recruiter':
-                        console.log({
-                            ...state,
-                            home: {
-                                component: <RecruiterPopUp />,
-                                value: action.payload.value,
-                            }
-                        })
                         return {
                             ...state,
                             home: {
-                                component: <RecruiterPopUp />,
+                                component: <RecruiterPopUp page={'home'} />,
                                 value: action.payload.value,
                             }
                         }

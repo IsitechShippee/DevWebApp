@@ -19,8 +19,12 @@ function StudentAnnoucement(props) {
 
   const addFavories = () => {
     let sendData = {
-      "id_user": userInfo.userInfo.id,
-      "id_annoucement": props.announcement.id
+      id_user: userInfo.userInfo.id,
+      id_annoucement: props.announcement.id,
+      user: {
+        id: sessionStorage.getItem('id'),
+        password: sessionStorage.getItem('psw'),
+      }
     }
 
     axios.post(process.env.REACT_APP_API_URL + '/api/Favorite/AjoutFavorite', sendData)

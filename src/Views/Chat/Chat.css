@@ -1,4 +1,4 @@
-@media screen and (orientation: landscape) {
+/* @media screen and (orientation: landscape) { */
   .Chat {
     display: flex;
     width: 100%;
@@ -58,29 +58,40 @@
     padding: 8px;
   }
 
-  /* .Chat .chat_content .foot .text_bar{
-
-} */
-
   .Chat .chat_content .foot button {
-    width: 35px;
-    height: 35px;
+    width: 65px;
+    height: 65px;
     cursor: pointer;
-    background-color: var(--color-pink);
+    background-color: var(--color-black);
     border-radius: 50%;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    right: 1.5%;
   }
 
   .Chat .chat_content .foot input {
-    background-color: var(--color-clear-pink);
-    text-overflow: wrap;
+    width: 90%;
+    height: 20%;
+    margin-right: 25px;
   }
 
   .Chat .chat_content .foot img {
-    width: 30px;
-    height: 30px;
+    width: 38px;
+    height: 38px;
   }
-}
 
+  .Chat .text_bar{
+    width: 95%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+/* } */
+
+/* 
 @media screen and (orientation: portrait) {
 
-}
+} */

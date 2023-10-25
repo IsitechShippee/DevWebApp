@@ -9,17 +9,15 @@
 }
 
 :root {
-  --color-black: #2d2a2a;
-  --color-clear-pink: #fee5eb;
-  --color-pink: #ff0044;
-  --color-clear-pink2: #ffa4bc;
-  /* --color-black-pink: #38000f; */
+  --color-black: #242828;
+  --color-clear-pink: #E2FBF9;
+  --color-pink: #00857C;
+  --color-clear-pink2: #7DCEC8;
 
   width: 100vw;
   height: 100vh;
   overflow-x: hidden;
 }
-
 
 ::-webkit-scrollbar {
   width: 10px;
@@ -38,4 +36,9 @@
 button{
   cursor: pointer;
   background-color: transparent;
+}
+
+
+textarea:focus, input:focus{
+  outline: solid 1px var(--color-clear-pink);
 }

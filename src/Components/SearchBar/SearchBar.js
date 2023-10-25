@@ -103,7 +103,7 @@ function SearchBar(props) {
     return (
         <div className='search_bar'>
             <input
-                className=''
+                // className=''
                 list="city"
                 type="text"
                 id="city"

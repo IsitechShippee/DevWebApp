@@ -10,11 +10,14 @@ function User() {
 
   const userInfo = useContext(myAppContextUserInfo)
 
+  // console.log(process.env.REACT_APP_API_URL + "/document/" + userInfo.userInfo.id + "/picture_" + userInfo.userInfo.firstname + "_" + userInfo.userInfo.surname + ".png")
+
   return (
     <div className='user'>
       <div className='user_info'>
         <h1>Mon profil</h1>
         <div className='user_content'>
+          {/* <img src={process.env.REACT_APP_API_URL + "/document/" + userInfo.userInfo.id + "/picture_" + userInfo.userInfo.firstname + "_" + userInfo.userInfo.surname + ".png"} alt='profil' className='profil_picture' /> */}
           <img src={Pictures.Profils} alt='profil' className='profil_picture' />
           <img src={Pictures.Edit} alt='edit' className='edit_button' />
           <div className='description'>

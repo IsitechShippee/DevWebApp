@@ -1,10 +1,75 @@
 .sign_up input.file {
-  background-color: var(--color-black);
-  width: 51px;
-  height: 51px;
-  padding: 0;
+  border: var(--color-black);
+  display: inline-block;
+  cursor: pointer;
 }
 
 .sign_up input.file:hover {
+  background-color: var(--color-black);
+}
+
+.sign_up .content_container {
+  width: 80%;
+  height: 60%;
+  background-color: rgba(0, 0, 0, 0.089);
+  overflow: hidden;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.sign_up .info_content:nth-child(2) input {
+  margin: 5px;
+}
+
+.sign_up .button_nav {
+  width: 80%;
+  height: 51px;
+  position: relative;
+}
+
+.sign_up .button_nav .previous {
+  position: absolute;
+  left: 10%;
+}
+
+.sign_up .button_nav .next {
+  position: absolute;
+  right: 10%; 
+}
+
+.sign_up .button_nav .finish {
+  position: absolute;
+  right: 10%;
+}
+
+.sign_up .radio input{
+  width: 50px;
+  height: 20px;
+}
+
+.sign_up textarea{
+  background-color: var(--color-black);
+  border-radius: 30px;
+  padding: 10px;
+  width: 60vw;
+  height: 20vh;
+  color: var(--color-clear-pink2);
+  font-size: 18px;
+  font-weight: 600;
+  resize: none;
+}
+
+.sign_up .loc_content{
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+}
+
+.sign_up datalist{
+  width: 50px;
+  height: 20px;
   background-color: var(--color-black);
 }

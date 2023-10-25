@@ -99,7 +99,7 @@ function NewPost() {
   }
 
   const isFinishButton = () => {
-    return view === viewMax 
+    return view === viewMax
     //&& isCompleted[viewMax]
   }
 
@@ -123,7 +123,7 @@ function NewPost() {
         return (
           <>
             <div className='info_content'>
-              <h2 className='title'>Titre :</h2>
+              <h2 className='title'>Titre de l'annonce :</h2>
               <input className='text' type='text' id='title' value={announcement.title} onChange={updateInfo}></input>
             </div>
 
@@ -139,7 +139,7 @@ function NewPost() {
             <>
               <div className='info_content'>
                 <h2 className='naf'>Domaine d'activité :</h2>
-                <input list="naf" name="naf" placeholder="Domaine d'activité" onChange={updateInfo} />
+                <input list="naf" name="naf" autocomplete="off" placeholder="Domaine d'activité" onChange={updateInfo} />
                 <datalist id="naf">
                   {
                     donnee.naf.map((element, index) => (
@@ -154,7 +154,7 @@ function NewPost() {
 
               <div className='info_content'>
                 <h2 className='diplome'>Diplome possédé :</h2>
-                <input list="diplome" name="diplome" placeholder="Diplome" onChange={updateInfo} />
+                <input list="diplome" name="diplome" autocomplete="off" placeholder="Diplome" onChange={updateInfo} />
                 <datalist id="diplome">
                   {
                     donnee.diplome.map((element, index) => (
@@ -166,7 +166,7 @@ function NewPost() {
 
               <div className='info_content'>
                 <h2 className='skills'>Vos compétences :</h2>
-                <input list="skills" name="skills" placeholder="Compétence" onChange={updateInfo} />
+                <input list="skills" name="skills" autocomplete="off" placeholder="Compétence" onChange={updateInfo} />
                 <datalist id="skills">
                   {
                     donnee.skills.map((element, index) => (
@@ -206,7 +206,7 @@ function NewPost() {
   }
 
   const isPrecButton = () => {
-    return view > 0 && view <= viewMax 
+    return view > 0 && view <= viewMax
   }
 
   return (

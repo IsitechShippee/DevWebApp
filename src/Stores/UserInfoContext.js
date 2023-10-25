@@ -9,12 +9,11 @@ export const MyAppContextUserInfoProvider = ({ children }) => {
 
     const userInfoReducer = (state, action) => {
         console.log('UserInfoContext : ' + action.type + ' - Payload : ', action.payload)
+        let newState = state
         switch (action.type) {
             case 'CONNECT':
                 return action.payload
             case 'LOVE':
-                let newState = state
-
                 // On regarde si c'est un ajout au favoris ou un retrait
                 let isAdd = true;
                 newState.favorites.forEach(element => {
@@ -50,8 +49,26 @@ export const MyAppContextUserInfoProvider = ({ children }) => {
                 } else {
                     newState.favorites = newState.favorites.filter((item) => item.id !== action.payload.id)
                 }
-
                 return newState
+
+            case 'SET VU':
+                newState.convs.forEach(element => {
+                    if(element.id_people === action.payload.id_people){
+                        element.chat.forEach(element => {
+                            element.status = "Vu"
+                        })
+                    }
+                })
+                return newState
+
+            case 'ADD CHAT':
+                newState.convs.forEach(element => {
+                    if (element.id_people === action.payload.id_people) {
+                        element.chat.push(action.payload.chat)
+                    }
+                })
+                return newState
+
             default:
                 return state
         }

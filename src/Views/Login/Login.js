@@ -3,9 +3,7 @@ import { Routes, Route } from 'react-router-dom'
 import './Login.css'
 
 import SignIn from './SignIn/SignIn'
-// import SignUp from './SignUp/SignUp'
-
-import SignUp from './SignUpTest/SignUp'
+import SignUp from './SignUp/SignUp'
 
 function Login(props) {
 

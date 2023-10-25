@@ -1,15 +1,16 @@
 import React, { useEffect, useState } from 'react'
 import Loading from '../../../Components/Loading/Loading';
-// import useAxios from '../../../Axios/axios'
 import axios from 'axios'
+
+import SHA3 from 'crypto-js/sha3'
+import Base64 from 'crypto-js/enc-base64'
 
 function ConnectLoader(props) {
 
   const [data, setData] = useState(null);
 
   useEffect(() => {
-    console.log(props.connectInfo.id, props.connectInfo.psw)
-    axios.get(process.env.REACT_APP_API_URL + '/api/User/connect?id=' + props.connectInfo.id + '&psw=' + props.connectInfo.psw)
+    axios.post(process.env.REACT_APP_API_URL + '/api/User/connect', { id: props.connectInfo.id, password: Base64.stringify(SHA3(props.connectInfo.psw)) })
       .then((response) => {
         console.log(response)
         if (response.data.connexion === "false") {
@@ -22,18 +23,13 @@ function ConnectLoader(props) {
           setData(response.data)
           props.setUserInfo({ type: 'CONNECT', payload: data })
           setTimeout(() => {
+            sessionStorage.setItem('id', props.connectInfo.id)
+            sessionStorage.setItem('psw', Base64.stringify(SHA3(props.connectInfo.psw)))
             props.setLoading(false)
             props.setConnect(true)
           }, 1000);
         }
       })
-      // .then(() => {
-      //   props.setUserInfo({ type: 'CONNECT', payload: data })
-      //   setTimeout(() => {
-      //     props.setLoading(false)
-      //     props.setConnect(true)
-      //   }, 500);
-      // })
       .catch((error) => {
         props.setError(error.message)
       })

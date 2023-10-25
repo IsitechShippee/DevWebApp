@@ -1,17 +1,69 @@
-.newpost{
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
+.newpost {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
 }
 
-.newpost textarea{
-    background: var(--color-black);
-    border-radius: 30px;
-    width: 80% !important;
-    height: 40vh !important;
-    padding: 2.5%;
-    font-size: 18px;
-    color: var(--color-clear-pink)
+.newpost textarea {
+  width: calc(100% - 40px) !important;
+  height: 50vh !important;
+  background: var(--color-black);
+  border-radius: 30px;
+  padding: 20px;
+  font-size: 18px;
+  color: var(--color-clear-pink2);
+  resize: none;
 }
+
+.newpost .content_container {
+  /* background-color: red; */
+  width: 90%;
+  height: 70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.newpost input {
+  width: calc(100% - 40px);
+}
+.newpost .content_container h2 {
+  margin-bottom: 10px;
+}
+
+.newpost .button_nav {
+  padding-bottom: 50px;
+}
+
+.newpost .button_nav {
+  width: 80%;
+  height: 51px;
+  position: relative;
+}
+
+.newpost .button_nav .previous {
+  position: absolute;
+  left: 10%;
+}
+
+.newpost .button_nav .next {
+  position: absolute;
+  right: 10%;
+}
+
+.newpost .button_nav .finish {
+  position: absolute;
+  right: 10%;
+}
+
+.newpost button {
+    width: 340px;
+    font-size: 18px;
+    background: var(--color-black);
+    padding: 15px 20px;
+    border-radius: 50px;
+    color: var(--color-clear-pink2);
+    font-weight: 600;
+  }
