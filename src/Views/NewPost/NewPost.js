@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useContext } from 'react'
 
-import SHA3 from 'crypto-js/sha3'
+// import SHA3 from 'crypto-js/sha3'
 
 import { myAppContextUserInfo } from '../../Stores/UserInfoContext'
 import axios from 'axios'
@@ -16,7 +16,8 @@ function NewPost() {
   const [donnee, setDonnee] = useState({ skills: null, diplome: null, naf: null })
   const [error, setError] = useState(null)
 
-  const [isLoading, setIsLoading] = useState(false)
+  // const [isLoading, setIsLoading] = useState(false)
+  const isLoading = false
   const [isCompleted, setIsCompleted] = useState([false])
 
   const [view, setView] = useState(0)
@@ -32,7 +33,7 @@ function NewPost() {
         setAnnoucement({ ...announcement, 'description': event.target.value })
         break;
       case 'naf_id':
-        // console.log(event.target.value)
+        // // Console.log(event.target.value)
         let naf = null
         naf = donnee.naf.map((element_naf) => element_naf.naf_division.find((element) => element.title === event.target.value)).find((element) => element !== undefined)
         if (naf) {
@@ -60,7 +61,7 @@ function NewPost() {
   }
 
   const validation = () => {
-    console.log(announcement)
+    // Console.log(announcement)
     if (announcement.title
       && announcement.description
       && announcement.division_naf_id
@@ -69,10 +70,10 @@ function NewPost() {
     ) {
       setView(view + 1)
       const info = { ...announcement, user_id: userInfoContext.userInfo.id, type_id: userInfoContext.userInfo.type_user.id }
-      console.log('info : ', info)
+      // Console.log('info : ', info)
       axios.post(process.env.REACT_APP_API_URL + '/api/Annoucement/AddAnnouncement', info)
         .then((result) => {
-          console.log(result)
+          // Console.log(result)
           if (result.status === 200) {
             setError(null)
           } else {
@@ -118,7 +119,6 @@ function NewPost() {
               .then((responseNaf) => {
                 setDonnee({ skills: responseSkills.data, diplome: responseDiplome.data, naf: responseNaf.data })
               })
-              .then(console.log(donnee))
           })
       })
   }

@@ -13,7 +13,7 @@ function RecruiterAnnouncement(props) {
   const [isFavorite, setFavories] = useState(props.announcement.favorite)
 
   const seeAnnouncement = () => {
-    console.log(props)
+    // // Console.log(props)
     popUp.dispatchPopUp({ type: props.page, payload: { type: 'recruiter', value: props.announcement } })
   }
 
@@ -29,12 +29,12 @@ function RecruiterAnnouncement(props) {
 
     axios.post(process.env.REACT_APP_API_URL + '/api/Favorite/AddFavorite', sendData)
       .then((response) => {
-        console.log(response.data)
+        // // Console.log(response.data)
         userInfo.dispatchUserInfo({ type: 'LOVE', payload: props.announcement.id })
         setFavories(!isFavorite)
       })
       .catch((error) => {
-        console.log(error.message)
+        // // Console.log(error.message)
       })
   }
 

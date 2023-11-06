@@ -1,7 +1,7 @@
 import React, { useState, useContext, useEffect } from 'react'
 import './Search.css'
 import RecruiterAnnouncement from '../../Components/Announcement/RecriuterAnnouncement/RecruiterAnnouncement'
-import StudentAnnouncement from '../../Components/Announcement/StudentAnnouncement/StudentAnnouncement'
+// import StudentAnnouncement from '../../Components/Announcement/StudentAnnouncement/StudentAnnouncement'
 import Pictures from '../../Pictures/Pictures'
 import SearchBar from '../../Components/SearchBar/SearchBar'
 import axios from 'axios'
@@ -59,7 +59,7 @@ function Search() {
         setDonnee({ ...donnee, cp: response.data[0].codesPostaux[0] })
       })
       .catch((error) => {
-        console.log(error.message)
+        // Console.log(error.message)
       })
   }
 
@@ -73,7 +73,7 @@ function Search() {
     if (donnee.diplome) {
       url += '&diplome=' + donnee.diplome
     }
-    console.log('request : ', process.env.REACT_APP_API_URL + '/api/Annoucement/listannouncement?' + url)
+    // Console.log('request : ', process.env.REACT_APP_API_URL + '/api/Annoucement/listannouncement?' + url)
     axios.get(process.env.REACT_APP_API_URL + '/api/Annoucement/listannouncement?' + url)
       .then((response) => {
         console.log('search reponse : ', response.data)

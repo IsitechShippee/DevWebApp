@@ -7,7 +7,7 @@ function NavBar(props) {
 
   const acitveElement = (id) => {
     props.setIsActive(id)
-    console.log(id)
+    // // Console.log(id)
   }
   
   const disconnect = () => {

@@ -31,7 +31,7 @@ export const myAppContextPopUp = createContext({
 export const MyAppContextPopUpProvider = ({ children }) => {
 
     const popUpReducer = (state, action) => {
-        console.log('PopUpContext : ' + action.type + ' - Payload : ', action.payload)
+        // // Console.log('PopUpContext : ' + action.type + ' - Payload : ', action.payload)
         switch (action.type) {
             case 'HOME':
                 switch (action.payload.type) {

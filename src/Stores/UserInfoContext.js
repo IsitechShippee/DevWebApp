@@ -8,7 +8,7 @@ export const myAppContextUserInfo = createContext({
 export const MyAppContextUserInfoProvider = ({ children }) => {
 
     const userInfoReducer = (state, action) => {
-        console.log('UserInfoContext : ' + action.type + ' - Payload : ', action.payload)
+        // // Console.log('UserInfoContext : ' + action.type + ' - Payload : ', action.payload)
         let newState = state
         switch (action.type) {
             case 'CONNECT':
@@ -26,21 +26,21 @@ export const MyAppContextUserInfoProvider = ({ children }) => {
                 newState.loc_announcements.forEach(element => {
                     if (element.id === action.payload) {
                         element.favorite = isAdd
-                        console.log(element.id + ' is add : ' + element.favorite)
+                        // // Console.log(element.id + ' is add : ' + element.favorite)
                     }
                 })
 
                 newState.recent_announcements.forEach(element => {
                     if (element.id === action.payload) {
                         element.favorite = isAdd
-                        console.log(element.id + ' is add : ' + element.favorite)
+                        // // Console.log(element.id + ' is add : ' + element.favorite)
                     }
                 })
 
                 newState.select_announcements.forEach(element => {
                     if (element.id === action.payload) {
                         element.favorite = isAdd
-                        console.log(element.id + ' is add : ' + element.favorite)
+                        // // Console.log(element.id + ' is add : ' + element.favorite)
                     }
                 })
 
@@ -50,7 +50,7 @@ export const MyAppContextUserInfoProvider = ({ children }) => {
                 } else {
                     newState.favorites = newState.favorites.filter((item) => item.id !== action.payload)
                 }
-                console.log(newState)
+                // // Console.log(newState)
                 return newState
 
             case 'SET VU':

@@ -18,7 +18,7 @@ function ConnectLoader(props) {
     }
     axios.post(process.env.REACT_APP_API_URL + '/api/User/connect', json)
       .then((response) => {
-        console.log(response)
+        // // Console.log(response)
         if (response.data.connexion === "false") {
           props.setError(response.data.erreur)
           setTimeout(() => {

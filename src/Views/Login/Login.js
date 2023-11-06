@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { Routes, Route } from 'react-router-dom'
 import './Login.css'
 
@@ -8,7 +8,7 @@ import SignUp from './SignUp/SignUp'
 function Login(props) {
 
     const connect = (id, psw) => {
-        console.log(id, psw)
+        // // Console.log(id, psw)
         props.setConnectInfo({ id: id, psw: psw })
         props.setLoading(true)
     }

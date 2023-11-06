@@ -33,10 +33,10 @@ function StudentAnnoucement(props) {
         password: sessionStorage.getItem('psw'),
       }
     }
-    console.log(info)
+    // // Console.log(info)
     axios.post(process.env.REACT_APP_API_URL + '/api/Chat/AddChat', info)
       .then((result) => {
-        console.log(result)
+        // // Console.log(result)
         if(result.data === 'user existe pas') return
         userInfo.dispatchUserInfo({ type: 'ADD CHAT', payload: { id_people: popUp.popUp[props.page].value.user.id, chat: { content: msg, send_time: Date.now(), who: true, status: "Envoyer", id: 0 } } })
       })

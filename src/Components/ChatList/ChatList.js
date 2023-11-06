@@ -9,7 +9,7 @@ function ChatList(props) {
     const userInfo = useContext(myAppContextUserInfo)
 
     const isRead = (chat) => {
-        console.log()
+        // // Console.log()
         if (chat.chat[chat.chat.length - 1].who || !chat.chat[chat.chat.length - 1].status === "Vu") {
             return true
         }
@@ -26,14 +26,14 @@ function ChatList(props) {
                     password: sessionStorage.getItem('psw'),
                 }
             }
-            console.log(info)
+            // // Console.log(info)
             axios.post(process.env.REACT_APP_API_URL + '/api/Chat/AddChat', info)
                 .then((result) => {
-                    console.log(result)
+                    // // Console.log(result)
                     userInfo.dispatchUserInfo({ type: 'SET VU', payload: chat })
                 })
                 .catch((error) => {
-                    console.log(error.message)
+                    // // Console.log(error.message)
                 })
         }
     }

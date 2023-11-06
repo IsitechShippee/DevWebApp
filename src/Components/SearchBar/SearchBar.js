@@ -75,7 +75,7 @@ function SearchBar(props) {
     }
 
     const IsShowList = () => {
-        // console.log(props.list ,isShow && props.list !== undefined && props.list !== null)
+        // // Console.log(props.list ,isShow && props.list !== undefined && props.list !== null)
         return isShow && props.list !== undefined && props.list !== null
     }
 
@@ -84,7 +84,7 @@ function SearchBar(props) {
             return IsShowList() && <div className='results_list'>
                 {
                     props.list.map((element, index) => {
-                        // console.log(element[props.element])
+                        // // Console.log(element[props.element])
                         return <div className={selected === index ? 'result selected' : 'result'} key={index} onClick={select}>{element[props.element]}</div>
                     })
                 }

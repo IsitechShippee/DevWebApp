@@ -14,7 +14,7 @@ function Chat() {
   const [msg, setMsg] = useState('')
 
   const sendMsg = () => {
-    console.log(msg)
+    // // Console.log(msg)
     if (msg === '') return
     let info = {
       id_sender: userInfoContext.userInfo.id,
@@ -25,11 +25,11 @@ function Chat() {
         password: sessionStorage.getItem('psw'),
       }
     }
-    console.log(info)
+    // // Console.log(info)
     axios.post(process.env.REACT_APP_API_URL + '/api/Chat/AddChat', info)
       .then((result) => {
-      console.log(result)
-      console.log(selectedChat)
+      // // Console.log(result)
+      // // Console.log(selectedChat)
       userInfoContext.dispatchUserInfo({ type: 'ADD CHAT', payload: { id_people: selectedChat.id_people, chat: { content: msg, send_time: Date.now(), who: true, status: "Envoyer", id: 0 } } })
     })
   setMsg('')
