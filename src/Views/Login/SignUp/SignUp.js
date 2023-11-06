@@ -251,10 +251,12 @@ function SignUp() {
 
             <div className='info_content'>
               <h2 className='conveyed'>Êtes vous véhiculé :</h2>
-              <input type='radio' name='user-type' id='is_conveyed_true' value={studentInfo.is_conveyed} onChange={updateInfo} />
-              <label>Oui</label>
-              <input type='radio' name='user-type' id='is_conveyed_false' value={!studentInfo.is_conveyed} onChange={updateInfo} />
-              <label>Non</label>
+              <div className='radio'>
+                <input type='radio' name='user-type' id='is_conveyed_true' value={studentInfo.is_conveyed} onChange={updateInfo} />
+                <label for='is_conveyed_true' >Oui</label>
+                <input type='radio' name='user-type' id='is_conveyed_false' value={!studentInfo.is_conveyed} onChange={updateInfo} />
+                <label for='is_conveyed_false' >Non</label>
+              </div>
             </div>
           </>
         )
@@ -402,13 +404,13 @@ function SignUp() {
   const choice = (
     <>
       <h2>Vous êtes:</h2>
+
       <div className='radio'>
-        <label>Etudiant</label>
-        <input type='radio' name='user-type' onChange={() => { setType('student'); setIsCompleted([true]); setViewMax(4) }} />
-      </div>
-      <div className='radio'>
-        <label>Recruteur</label>
-        <input type='radio' name='user-type' onChange={() => { setType('recruiter'); getCompanyList(); setIsCompleted([true]); setViewMax(3) }} />
+        <input id='student' type='radio' name='user-type' onChange={() => { setType('student'); setIsCompleted([true]); setViewMax(4) }} />
+        <label for='student'>Étudiant</label>
+
+        <input id='recruiter' type='radio' name='user-type' onChange={() => { setType('recruiter'); getCompanyList(); setIsCompleted([true]); setViewMax(3) }} />
+        <label for='recruiter'>Recruteur</label>
       </div>
     </>
   )
@@ -507,7 +509,7 @@ function SignUp() {
     <div className='sign_up'>
 
       <div className='bienvenue'>
-        <h1>C'EST A VOUS</h1>
+        <h1>C'EST À VOUS</h1>
       </div>
 
       <div className='content_container'>

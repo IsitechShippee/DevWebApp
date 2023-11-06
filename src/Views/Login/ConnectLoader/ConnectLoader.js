@@ -10,7 +10,13 @@ function ConnectLoader(props) {
   const [data, setData] = useState(null);
 
   useEffect(() => {
-    axios.post(process.env.REACT_APP_API_URL + '/api/User/connect', { id: props.connectInfo.id, password: Base64.stringify(SHA3(props.connectInfo.psw)) })
+    let json = null
+    if(sessionStorage.getItem('id') && sessionStorage.getItem('psw')){
+      json = { id: props.connectInfo.id, password: props.connectInfo.psw }
+    }else {
+      json = { id: props.connectInfo.id, password: Base64.stringify(SHA3(props.connectInfo.psw)) }
+    }
+    axios.post(process.env.REACT_APP_API_URL + '/api/User/connect', json)
       .then((response) => {
         console.log(response)
         if (response.data.connexion === "false") {

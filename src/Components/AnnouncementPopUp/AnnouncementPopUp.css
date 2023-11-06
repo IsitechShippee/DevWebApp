@@ -85,3 +85,21 @@
 .PopUp .qualif{
   width: 40%;
 }
+
+.PopUp .recruiter_info{
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+}
+
+.PopUp .recruiter_info img{
+  width: 45px;
+  margin: 0 10px;
+  border-radius: 5px;
+}
+
+.PopUp .recruiter img {
+  width: 50px;
+  margin: 0 10px;
+  border-radius: 8px;
+}

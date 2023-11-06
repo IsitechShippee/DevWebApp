@@ -9,6 +9,8 @@ import Edit from './Edit.png'
 import Search from './Search.png'
 import Filters from './Filters.png'
 import Play from './Play.png'
+import EmptyUser from './EmptyUser.png'
+import EmptyCompany from './EmptyCompany.png'
 
 import SNCF from './sncf.png'
 
@@ -23,6 +25,9 @@ const Pictures = {
     Search: Search,
     Filters: Filters,
     Play: Play,
+
+    EmptyUser: EmptyUser,
+    EmptyCompany: EmptyCompany,
 
     SNCF: SNCF,
     Profils: Profils

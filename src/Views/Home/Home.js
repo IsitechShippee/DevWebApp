@@ -33,17 +33,17 @@ function Home(props) {
 
         <div className='list'>
           <h2 className='selection'>Pour vous :</h2>
-          <ListAnnouncement type={'select_announcements'} isViewsMore={true} setIsActiveNavBar={props.setIsActiveNavBar} />
+          <ListAnnouncement type={'select_announcements'} isViewsMore={true} setIsActiveNavBar={props.setIsActiveNavBar} page={"HOME"}/>
         </div>
 
         <div className='list'>
           <h2 className='selection'>Dans le coin :</h2>
-          <ListAnnouncement type={'loc_announcements'} isViewsMore={true} setIsActiveNavBar={props.setIsActiveNavBar} />
+          <ListAnnouncement type={'loc_announcements'} isViewsMore={true} setIsActiveNavBar={props.setIsActiveNavBar} page={"HOME"}/>
         </div>
 
         <div className='list'>
           <h2 className='selection'>Posté récemment :</h2>
-          <ListAnnouncement type={'recent_announcements'} isViewsMore={true} setIsActiveNavBar={props.setIsActiveNavBar} />
+          <ListAnnouncement type={'recent_announcements'} isViewsMore={true} setIsActiveNavBar={props.setIsActiveNavBar} page={"HOME"}/>
         </div>
 
       </div>

@@ -13,10 +13,10 @@ function ListAnnouncement(props) {
         if (props.type === "annoucements") {
             switch (userInfo.userInfo.type_user.title) {
                 case 'Recruteur': {
-                    return (<RecruiterAnnouncement key={index} announcement={announcement} type={props.type} />)
+                    return (<RecruiterAnnouncement key={index} announcement={announcement} type={props.type} page={props.page}/>)
                 }
                 case 'Etudiant': {
-                    return (<StudentAnnouncement key={index} announcement={announcement} />)
+                    return (<StudentAnnouncement key={index} announcement={announcement} type={props.type} page={props.page}/>)
                 }
                 default: {
                     return null
@@ -25,10 +25,10 @@ function ListAnnouncement(props) {
         } else {
             switch (userInfo.userInfo.type_user.title) {
                 case 'Recruteur': {
-                    return (<StudentAnnouncement key={index} announcement={announcement} />)
+                    return (<StudentAnnouncement key={index} announcement={announcement} type={props.type} page={props.page}/>)
                 }
                 case 'Etudiant': {
-                    return (<RecruiterAnnouncement key={index} announcement={announcement} type={props.type} />)
+                    return (<RecruiterAnnouncement key={index} announcement={announcement} type={props.type} page={props.page}/>)
                 }
                 default: {
                     return null

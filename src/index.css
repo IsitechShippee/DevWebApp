@@ -6,13 +6,14 @@
   border: 0;
 
   font-family: "Poppins", sans-serif;
+  color: var(--color-black);
 }
 
 :root {
-  --color-black: #242828;
-  --color-clear-pink: #E2FBF9;
-  --color-pink: #00857C;
-  --color-clear-pink2: #7DCEC8;
+  --color-black: #2D2A2A;
+  --color-clear-pink: #fee5eb;
+  --color-pink: #FF0044;
+  --color-clear-pink2: #FFA4BC;
 
   width: 100vw;
   height: 100vh;
@@ -38,7 +39,10 @@ button{
   background-color: transparent;
 }
 
-
 textarea:focus, input:focus{
   outline: solid 1px var(--color-clear-pink);
+}
+
+body{
+  orientation: landscape;
 }

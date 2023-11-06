@@ -17,29 +17,30 @@ export const MyAppContextUserInfoProvider = ({ children }) => {
                 // On regarde si c'est un ajout au favoris ou un retrait
                 let isAdd = true;
                 newState.favorites.forEach(element => {
-                    if (element.id === action.payload.id) {
+                    if (element.id === action.payload) {
                         isAdd = false
                     }
                 })
 
                 // On parcourt les annonces pour ajouter a l'annonce en question le favori
                 newState.loc_announcements.forEach(element => {
-                    if (element.id === action.payload.id) {
+                    if (element.id === action.payload) {
                         element.favorite = isAdd
+                        console.log(element.id + ' is add : ' + element.favorite)
                     }
                 })
 
                 newState.recent_announcements.forEach(element => {
-                    if (element.id === action.payload.id) {
+                    if (element.id === action.payload) {
                         element.favorite = isAdd
-                        // console.log(element.id + ' : ' + element.favorite)
+                        console.log(element.id + ' is add : ' + element.favorite)
                     }
                 })
 
                 newState.select_announcements.forEach(element => {
-                    if (element.id === action.payload.id) {
+                    if (element.id === action.payload) {
                         element.favorite = isAdd
-                        // console.log(element.id + ' : ' + element.favorite)
+                        console.log(element.id + ' is add : ' + element.favorite)
                     }
                 })
 
@@ -47,8 +48,9 @@ export const MyAppContextUserInfoProvider = ({ children }) => {
                 if (isAdd) {
                     newState.favorites.push(action.payload)
                 } else {
-                    newState.favorites = newState.favorites.filter((item) => item.id !== action.payload.id)
+                    newState.favorites = newState.favorites.filter((item) => item.id !== action.payload)
                 }
+                console.log(newState)
                 return newState
 
             case 'SET VU':

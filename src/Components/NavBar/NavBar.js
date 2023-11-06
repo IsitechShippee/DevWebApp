@@ -9,6 +9,11 @@ function NavBar(props) {
     props.setIsActive(id)
     console.log(id)
   }
+  
+  const disconnect = () => {
+    sessionStorage.clear()
+    props.setConnect(false)
+  }
 
   return (
     <div className='navbar'>
@@ -31,6 +36,10 @@ function NavBar(props) {
       <Link to='/user' onClick={() => acitveElement(4)} className={props.isActive === 4 ? 'user active' : 'user'}>
         <SVG.User />
         <h1>Compte</h1>
+      </Link>
+      <Link to='/' onClick={disconnect}>
+        <SVG.Disconnect />
+        <h1>Déconnexion</h1>
       </Link>
     </div>
   )

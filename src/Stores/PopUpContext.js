@@ -7,6 +7,22 @@ export const myAppContextPopUp = createContext({
         home: {
             component: <></>,
             value: null,
+        },
+        search: {
+            component: <></>,
+            value: null,
+        },
+        newPost: {
+            component: <></>,
+            value: null,
+        },
+        chat: {
+            component: <></>,
+            value: null,
+        },
+        user: {
+            component: <></>,
+            value: null,
         }
     },
     dispatchPopUp: (action) => { },
@@ -46,6 +62,128 @@ export const MyAppContextPopUpProvider = ({ children }) => {
                     default:
                         return state
                 }
+            case 'SEARCH':
+                switch (action.payload.type) {
+                    case 'student':
+                        return {
+                            ...state,
+                            search: {
+                                component: <StudentPopUp page={'search'} />,
+                                value: action.payload.value,
+                            }
+                        }
+                    case 'recruiter':
+                        return {
+                            ...state,
+                            search: {
+                                component: <RecruiterPopUp page={'search'} />,
+                                value: action.payload.value,
+                            }
+                        }
+                    case 'close':
+                        return {
+                            ...state,
+                            search: {
+                                component: <></>,
+                                value: null,
+                            }
+                        }
+                    default:
+                        return state
+                }
+            case 'NEWPOST':
+                {
+                    switch (action.payload.type) {
+                        case 'student':
+                            return {
+                                ...state,
+                                newPost: {
+                                    component: <StudentPopUp page={'newPost'} />,
+                                    value: action.payload.value,
+                                }
+                            }
+                        case 'recruiter':
+                            return {
+                                ...state,
+                                newPost: {
+                                    component: <RecruiterPopUp page={'newPost'} />,
+                                    value: action.payload.value,
+                                }
+                            }
+                        case 'close':
+                            return {
+                                ...state,
+                                newPost: {
+                                    component: <></>,
+                                    value: null,
+                                }
+                            }
+                        default:
+                            return state
+                    }
+                }
+            case 'CHAT':
+                {
+                    switch (action.payload.type) {
+                        case 'student':
+                            return {
+                                ...state,
+                                chat: {
+                                    component: <StudentPopUp page={'chat'} />,
+                                    value: action.payload.value,
+                                }
+                            }
+                        case 'recruiter':
+                            return {
+                                ...state,
+                                chat: {
+                                    component: <RecruiterPopUp page={'chat'} />,
+                                    value: action.payload.value,
+                                }
+                            }
+                        case 'close':
+                            return {
+                                ...state,
+                                chat: {
+                                    component: <></>,
+                                    value: null,
+                                }
+                            }
+                        default:
+                            return state
+                    }
+                }
+            case 'USER':
+                {
+                    switch (action.payload.type) {
+                        case 'student':
+                            return {
+                                ...state,
+                                user: {
+                                    component: <StudentPopUp page={'user'} />,
+                                    value: action.payload.value,
+                                }
+                            }
+                        case 'recruiter':
+                            return {
+                                ...state,
+                                user: {
+                                    component: <RecruiterPopUp page={'user'} />,
+                                    value: action.payload.value,
+                                }
+                            }
+                        case 'close':
+                            return {
+                                ...state,
+                                user: {
+                                    component: <></>,
+                                    value: null,
+                                }
+                            }
+                        default:
+                            return state
+                    }
+                }
             default:
                 return state
         }
@@ -53,6 +191,22 @@ export const MyAppContextPopUpProvider = ({ children }) => {
 
     const [popUp, dispatchPopUp] = useReducer(popUpReducer, {
         home: {
+            component: <></>,
+            value: null,
+        },
+        search: {
+            component: <></>,
+            value: null,
+        },
+        newPost: {
+            component: <></>,
+            value: null,
+        },
+        chat: {
+            component: <></>,
+            value: null,
+        },
+        user: {
             component: <></>,
             value: null,
         }

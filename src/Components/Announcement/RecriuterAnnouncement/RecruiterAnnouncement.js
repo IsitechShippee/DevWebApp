@@ -13,8 +13,8 @@ function RecruiterAnnouncement(props) {
   const [isFavorite, setFavories] = useState(props.announcement.favorite)
 
   const seeAnnouncement = () => {
-    // console.log(props.announcement)
-    popUp.dispatchPopUp({ type: 'HOME', payload: { type: 'recruiter', value: props.announcement } })
+    console.log(props)
+    popUp.dispatchPopUp({ type: props.page, payload: { type: 'recruiter', value: props.announcement } })
   }
 
   const addFavories = () => {
@@ -27,10 +27,10 @@ function RecruiterAnnouncement(props) {
       }
     }
 
-    axios.post(process.env.REACT_APP_API_URL + '/api/Favorite/AjoutFavorite', sendData)
+    axios.post(process.env.REACT_APP_API_URL + '/api/Favorite/AddFavorite', sendData)
       .then((response) => {
         console.log(response.data)
-        userInfo.dispatchUserInfo({ type: 'LOVE', payload: props.announcement })
+        userInfo.dispatchUserInfo({ type: 'LOVE', payload: props.announcement.id })
         setFavories(!isFavorite)
       })
       .catch((error) => {
@@ -38,18 +38,37 @@ function RecruiterAnnouncement(props) {
       })
   }
 
-  return (
-    <div className="announcement">
-      <div className="recruiter">
-        <img alt='Logo' className='logo' src={Pictures.SNCF} />
-        <h3>{props.announcement.user.company.name}</h3>
-        {userInfo.userInfo.type_user.id !== 2 && <img alt='Love' className='love' src={!isFavorite ? Pictures.Love : Pictures.ActifLove} onClick={addFavories}></img>}
-      </div>
-      <p className="title">{props.announcement.title}</p>
-      <div className='localisation'><img alt='Loc' className='loc' src={Pictures.Loc} /><p>{props.announcement.user.company.city}</p></div>
-      <button onClick={seeAnnouncement}>Voir l'annonce</button>
-    </div>
-  )
+  switch (userInfo.userInfo.type_user.title) {
+    case 'Etudiant':
+      return (
+        <div className="announcement">
+          <div className="recruiter">
+            <img alt='Logo' className='logo' src={Pictures.EmptyCompany} />
+            <h3>{props.announcement.user.company.name}</h3>
+            <img alt='Love' className='love' src={!isFavorite ? Pictures.Love : Pictures.ActifLove} onClick={addFavories}></img>
+          </div>
+          <p className="title">{props.announcement.title}</p>
+          <div className='localisation'><img alt='Loc' className='loc' src={Pictures.Loc} /><p>{props.announcement.user.company.city}</p></div>
+          <button onClick={seeAnnouncement}>Voir l'annonce</button>
+        </div>
+      )
+    case 'Recruteur':
+      return (
+        <div className="announcement">
+          <div className="recruiter">
+            <img alt='Logo' className='logo' src={Pictures.EmptyCompany} />
+            <h3>{userInfo.userInfo.company.name}</h3>
+            <div></div>
+          </div>
+          <p className="title">{props.announcement.title}</p>
+          <div className='localisation'><img alt='Loc' className='loc' src={Pictures.Loc} /><p>{userInfo.userInfo.company.city}</p></div>
+          <button onClick={seeAnnouncement}>Voir l'annonce</button>
+        </div>
+      )
+    default:
+      return <></>
+  }
+
 }
 
 export default RecruiterAnnouncement

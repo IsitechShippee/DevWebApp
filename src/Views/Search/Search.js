@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react'
+import React, { useState, useContext, useEffect } from 'react'
 import './Search.css'
 import RecruiterAnnouncement from '../../Components/Announcement/RecriuterAnnouncement/RecruiterAnnouncement'
 import StudentAnnouncement from '../../Components/Announcement/StudentAnnouncement/StudentAnnouncement'
@@ -6,16 +6,27 @@ import Pictures from '../../Pictures/Pictures'
 import SearchBar from '../../Components/SearchBar/SearchBar'
 import axios from 'axios'
 import { myAppContextUserInfo } from '../../Stores/UserInfoContext'
+import { myAppContextPopUp } from '../../Stores/PopUpContext'
 
 function Search() {
   const userInfoContext = useContext(myAppContextUserInfo)
+  const popUpContext = useContext(myAppContextPopUp)
 
   const [isActive, setIsActive] = useState(false)
   const [cityList, setCityList] = useState([])
+  const [isPopUp, setIsPopUp] = useState(false)
 
   const [donnee, setDonnee] = useState({})
 
   const [searchList, setSearchList] = useState([])
+
+  useEffect(() => {
+    if (popUpContext.popUp.search.value) {
+      setIsPopUp(true)
+    } else {
+      setIsPopUp(false)
+    }
+  }, [popUpContext])
 
   const filterList = {
     diplome: [
@@ -93,7 +104,7 @@ function Search() {
         <div className='search_result'>
           {
             searchList.map((element, index) => (
-              <RecruiterAnnouncement key={index} announcement={element}/>))
+              <RecruiterAnnouncement key={index} announcement={element} page={'SEARCH'}/>))
           }
         </div>
       </div>
@@ -121,15 +132,6 @@ function Search() {
               }
             </select>
 
-            {/* <h1>Secteur d'activité</h1>
-            <select >
-              {
-                filterList.activity.map((element, index) => (
-                  <option key={index} value={element.id}>{element.name}</option>
-                ))
-              }
-            </select> */}
-
             <div className='validation'>
               <button >Réinitialiser</button>
               <button onClick={research}>Valider</button>
@@ -137,6 +139,8 @@ function Search() {
           </div>
         }
       </div>
+
+      {isPopUp && popUpContext.popUp.search.component}
 
     </div>
   )
