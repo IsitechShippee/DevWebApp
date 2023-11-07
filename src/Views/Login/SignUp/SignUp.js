@@ -352,17 +352,17 @@ function SignUp() {
   }
 
   const finish_rendu = () => {
-    if(isAjout === true){
+    if (isAjout === true) {
       return <>
-      <h3>Votre compte à bien été créer ! Vous pouvez vous connecter :</h3>
-      <Link to='/' className='little_button'>Connexion</Link>
-    </>
-    }else {
+        <h3>Votre compte à bien été créer ! Vous pouvez vous connecter :</h3>
+        <Link to='/' className='little_button'>Connexion</Link>
+      </>
+    } else {
       return <>
-      <h3>Une erreur est survenu : </h3>
-      <p>{error}</p>
-      <h3>Veuillez réessayer !</h3>
-    </>
+        <h3>Une erreur est survenu : </h3>
+        <p>{error}</p>
+        <h3>Veuillez réessayer !</h3>
+      </>
     }
   }
 
@@ -505,17 +505,12 @@ function SignUp() {
           axios.post(process.env.REACT_APP_API_URL + '/api/User/AddRecruiter', info)
             .then((result) => {
               if (result.status === 200) {
-                if (result.data === 'creer') {
-                  setIsAjout(true)
-                  setView(view + 1)
-                } else if (result.data === 'existe') {
+                if (result.data === 'existe') {
                   setError('Un compte existe déjà avec cette adresse mail')
                 } else {
-                  setError('JSP')
+                  setIsAjout(true)
+                  setView(view + 1)
                 }
-              } else {
-                setIsAjout(false)
-                setError('JSP')
               }
             })
             .catch((error) => {
