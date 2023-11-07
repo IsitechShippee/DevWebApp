@@ -357,12 +357,6 @@ function SignUp() {
         <h3>Votre compte à bien été créer ! Vous pouvez vous connecter :</h3>
         <Link to='/' className='little_button'>Connexion</Link>
       </>
-    } else {
-      return <>
-        <h3>Une erreur est survenu : </h3>
-        <p>{error}</p>
-        <h3>Veuillez réessayer !</h3>
-      </>
     }
   }
 
