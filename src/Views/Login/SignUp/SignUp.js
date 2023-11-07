@@ -178,12 +178,12 @@ function SignUp() {
           <>
             <div className='info_content'>
               <h2 className='firstname'>Votre nom :</h2>
-              <input type='text' placeholder='Entrer votre nom' id='surname' value={studentInfo.surname} onChange={updateInfo}></input>
+              <input type='text' placeholder='Entrez votre nom' id='surname' value={studentInfo.surname} onChange={updateInfo}></input>
             </div>
 
             <div className='info_content'>
               <h2 className='surname'>Votre prénom :</h2>
-              <input type='text' placeholder='Entrer votre prénom' id='firstname' value={studentInfo.firstname} onChange={updateInfo}></input>
+              <input type='text' placeholder='Entrez votre prénom' id='firstname' value={studentInfo.firstname} onChange={updateInfo}></input>
             </div>
 
             <div className='info_content'>
@@ -197,13 +197,13 @@ function SignUp() {
           <>
             <div className='info_content'>
               <h2 className='email'>Votre email :</h2>
-              <input type='text' placeholder='Entrer votre email' id='email' value={studentInfo.email} onChange={updateInfo}></input>
+              <input type='text' placeholder='Entrez votre email' id='email' value={studentInfo.email} onChange={updateInfo}></input>
             </div>
 
             <div className='info_content'>
               <h2 className='password'>Un mot de passe :</h2>
-              <input type='password' placeholder='Entrer votre mot de passe' id='password' value={studentInfo.password} onChange={updateInfo}></input>
-              <input type='password' placeholder='Entrer votre mot de passe' id='password2' value={studentInfo.password2} onChange={updateInfo}></input>
+              <input type='password' placeholder='Entrez votre mot de passe' id='password' value={studentInfo.password} onChange={updateInfo}></input>
+              <input type='password' placeholder='Entrez votre mot de passe' id='password2' value={studentInfo.password2} onChange={updateInfo}></input>
               <h4 className='info'>Au moins 8 caractères, dont une minuscule, une majuscule et un chiffre !</h4>
             </div>
           </>
@@ -225,7 +225,7 @@ function SignUp() {
 
             <div className='info_content'>
               <h2 className='web_site'>Votre site internet : *</h2>
-              <input type='text' placeholder='Entrer votre site internet' autoComplete='off' id='web_site' value={studentInfo.web_site} onChange={updateInfo}></input>
+              <input type='text' placeholder='Entrez votre site internet' autoComplete='off' id='web_site' value={studentInfo.web_site} onChange={updateInfo}></input>
             </div>
 
             <div className='info_content'>
@@ -292,7 +292,7 @@ function SignUp() {
           <>
             <div className='info_content'>
               <h2 className='company'>Votre entreprise :</h2>
-              <input list='companys' name='companys' placeholder='Entrer le nom de votre entreprise' id='company' onChange={updateInfo}></input>
+              <input list='companys' name='companys' placeholder='Entrez le nom de votre entreprise' id='company' onChange={updateInfo}></input>
               <datalist id='companys'>
                 {
                   companyList.map((element, index) => {
@@ -303,7 +303,7 @@ function SignUp() {
             </div>
             <div className='info_content'>
               <h2>Votre entreprise n'est pas dans la liste ?</h2>
-              <button onClick={() => alert("Cette option sera bientôt disponible !!")}>Ajouter la !</button>
+              <button onClick={() => alert("Cette option sera bientôt disponible !!")}>Ajoutez la !</button>
             </div>
           </>
         )
@@ -312,11 +312,11 @@ function SignUp() {
           <>
             <div className='info_content'>
               <h2 className='firstname'>Votre nom :</h2>
-              <input type='text' placeholder='Entrer votre nom' id='firstname' value={recruiterInfo.firstname} onChange={updateInfo}></input>
+              <input type='text' placeholder='Entrez votre nom' id='firstname' value={recruiterInfo.firstname} onChange={updateInfo}></input>
             </div>
             <div className='info_content'>
               <h2 className='surname'>Votre prénom :</h2>
-              <input type='text' placeholder='Entrer votre prénom' id='surname' value={recruiterInfo.surname} onChange={updateInfo}></input>
+              <input type='text' placeholder='Entrez votre prénom' id='surname' value={recruiterInfo.surname} onChange={updateInfo}></input>
             </div>
             <div className='info_content'>
               <h2 className='picture'>Une photo de profil :</h2>
@@ -329,12 +329,12 @@ function SignUp() {
           <>
             <div className='info_content'>
               <h2 className='email'>Votre adresse email :</h2>
-              <input type='text' placeholder='Entrer votre email' id='email' value={recruiterInfo.email} onChange={updateInfo}></input>
+              <input type='text' placeholder='Entrez votre email' id='email' value={recruiterInfo.email} onChange={updateInfo}></input>
             </div>
             <div className='info_content'>
               <h2 className='password'>Un mot de passe :</h2>
-              <input type='password' placeholder='Entrer votre mot de passe' id='password' value={recruiterInfo.password} onChange={updateInfo}></input>
-              <input type='password' placeholder='Entrer votre mot de passe' id='password2' value={recruiterInfo.password2} onChange={updateInfo}></input>
+              <input type='password' placeholder='Entrez votre mot de passe' id='password' value={recruiterInfo.password} onChange={updateInfo}></input>
+              <input type='password' placeholder='Entrez votre mot de passe' id='password2' value={recruiterInfo.password2} onChange={updateInfo}></input>
               <h4 className='info'>Au moins 8 caractères, dont une minuscule, une majuscule et un chiffre !</h4>
             </div>
             <div className='info_content'>
@@ -543,7 +543,7 @@ function SignUp() {
       </div>
 
       <div className='button_nav'>
-        {view > 0 && <button className='previous' onClick={() => setView(view - 1)}>Précedent</button>}
+        {view > 0 && <button className='previous' onClick={() => setView(view - 1)}>Précédent</button>}
 
         {isNextButton() && <button className='next' onClick={() => setView(view + 1)}>Suivant</button>}
 

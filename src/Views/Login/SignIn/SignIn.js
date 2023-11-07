@@ -43,7 +43,7 @@ function SignIn(props) {
                 <div className='create'>
                     <h3>Pas encore inscrit ?</h3>
                     <Link to='/sign-up' className='little_button'>
-                        <img src={Picture.Play} alt='play' />Creer un compte
+                        <img src={Picture.Play} alt='play' />Créer un compte
                     </Link>
                 </div>
 

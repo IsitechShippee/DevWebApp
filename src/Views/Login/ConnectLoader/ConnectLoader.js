@@ -11,9 +11,9 @@ function ConnectLoader(props) {
 
   useEffect(() => {
     let json = null
-    if(sessionStorage.getItem('id') && sessionStorage.getItem('psw')){
-      json = { id: props.connectInfo.id, password: props.connectInfo.psw }
-    }else {
+    if (sessionStorage.getItem('psw')) {
+      json = { id: props.connectInfo.id, password: sessionStorage.getItem('psw') }
+    } else {
       json = { id: props.connectInfo.id, password: Base64.stringify(SHA3(props.connectInfo.psw)) }
     }
     axios.post(process.env.REACT_APP_API_URL + '/api/User/connect', json)
@@ -30,7 +30,11 @@ function ConnectLoader(props) {
           props.setUserInfo({ type: 'CONNECT', payload: data })
           setTimeout(() => {
             sessionStorage.setItem('id', props.connectInfo.id)
-            sessionStorage.setItem('psw', Base64.stringify(SHA3(props.connectInfo.psw)))
+            if (sessionStorage.getItem('psw')) {
+              // sessionStorage.setItem('psw', props.connectInfo.psw)
+            } else {
+              sessionStorage.setItem('psw', Base64.stringify(SHA3(props.connectInfo.psw)))
+            }
             props.setLoading(false)
             props.setConnect(true)
           }, 1000);

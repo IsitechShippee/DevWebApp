@@ -55,7 +55,7 @@ export const MyAppContextUserInfoProvider = ({ children }) => {
 
             case 'SET VU':
                 newState.convs.forEach(element => {
-                    if(element.id_people === action.payload.id_people){
+                    if (element.id_people === action.payload.id_people) {
                         element.chat.forEach(element => {
                             element.status = "Vu"
                         })
@@ -64,11 +64,22 @@ export const MyAppContextUserInfoProvider = ({ children }) => {
                 return newState
 
             case 'ADD CHAT':
+                let test = false;
                 newState.convs.forEach(element => {
                     if (element.id_people === action.payload.id_people) {
                         element.chat.push(action.payload.chat)
+                        test = true;
                     }
                 })
+                if (!test) {
+                    newState.convs.push({
+                        id_people: action.payload.id_people,
+                        user_surname: action.payload.user.surname,
+                        user_firstname: action.payload.user.firstname,
+                        user_picture: null,
+                        chat: [action.payload.chat]
+                    })
+                }
                 return newState
 
             default:

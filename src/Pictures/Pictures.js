@@ -3,16 +3,14 @@ import Love from './Love.png'
 import ActifLove from './ActifLove.png'
 import Loc from './Loc.png'
 import Back from './Back.png'
-import Profils from './Profils.png'
 import Send from './Send.png'
 import Edit from './Edit.png'
 import Search from './Search.png'
 import Filters from './Filters.png'
 import Play from './Play.png'
+
 import EmptyUser from './EmptyUser.png'
 import EmptyCompany from './EmptyCompany.png'
-
-import SNCF from './sncf.png'
 
 const Pictures = {
     Logo: Logo,
@@ -28,9 +26,6 @@ const Pictures = {
 
     EmptyUser: EmptyUser,
     EmptyCompany: EmptyCompany,
-
-    SNCF: SNCF,
-    Profils: Profils
 }
 
 export default Pictures

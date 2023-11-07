@@ -30,11 +30,12 @@ function Search() {
 
   const filterList = {
     diplome: [
-      { id: null, name: "- Choisir un diplome -" },
-      { id: 1, name: "Sans Diplôme" },
+      { id: null, name: "- Choisir un diplôme -" },
+      { id: 1, name: "Sans diplôme" },
       { id: 2, name: "Bac" },
       { id: 3, name: "Bac + 2" },
       { id: 4, name: "Bac + 3" },
+      { id: 5, name: "Bac + 5 et plus" },
     ],
     activity: [
       { id: 1, name: "Informatique" },
@@ -97,7 +98,7 @@ function Search() {
 
       <div className='search_page'>
         <div className='research_bar'>
-          <SearchBar change={searchUpdate} list={searchList} element={'title'} placeholder={'Rechercher des annonces'} />
+          <SearchBar change={searchUpdate} list={searchList} element={'title'} placeholder={'Recherchez des annonces'} />
           <button onClick={research}><img src={Pictures.Search} alt='Search' /></button>
         </div>
 
@@ -120,7 +121,7 @@ function Search() {
           !isActive && <div className='filter_list'>
             <div className='city'>
               <h1>Localisation</h1>
-              <SearchBar change={cityIsUpdate} list={cityList} placeholder={'Rechercher une ville '} />
+              <SearchBar change={cityIsUpdate} list={cityList} placeholder={'Recherchez une ville '} />
             </div>
 
             <h1>Diplôme maximum</h1>

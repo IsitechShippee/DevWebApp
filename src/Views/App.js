@@ -15,8 +15,6 @@ import Settings from './Settings/Settings'
 import Error from './Error/Error';
 
 function App() {
-  // const [screenOrientation, setScreenOrientation] = useState(window.innerWidth > window.innerHeight ? 'landscape' : 'portrait')
-
   const userInfo = useContext(myAppContextUserInfo)
   const [isConnect, setConnect] = useState(false)
   const [isLoading, setLoading] = useState(false)
@@ -33,7 +31,7 @@ function App() {
       setLoading(false)
     }
 
-    if(error){
+    if (error) {
       sessionStorage.clear()
     }
   }, [error])
@@ -73,17 +71,10 @@ function App() {
   </Routes>
 
   const connexion = isLoading ? loading : notConnected
-  // if (screenOrientation == "landscape") {
+
   return (
     isConnect ? connected : connexion
   );
-  // } else {
-  //   return (
-  //     <div className="app">
-  //       <h1>Rotate your phone</h1>
-  //     </div>
-  //   )
-  // }
 }
 
 export default App;

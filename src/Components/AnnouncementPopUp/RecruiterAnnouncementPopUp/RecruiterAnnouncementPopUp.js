@@ -1,8 +1,10 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import '../AnnouncementPopUp.css'
 import { myAppContextPopUp } from '../../../Stores/PopUpContext'
 import { myAppContextUserInfo } from '../../../Stores/UserInfoContext'
 import Pictures from '../../../Pictures/Pictures'
+
+import axios from 'axios'
 // import moment from 'moment'
 
 function RecruiterAnnouncementPopUp(props) {
@@ -10,8 +12,40 @@ function RecruiterAnnouncementPopUp(props) {
   const popUp = useContext(myAppContextPopUp)
   const userInfo = useContext(myAppContextUserInfo)
 
+  const [msg, setMsg] = useState('')
+
   const close = () => {
     popUp.dispatchPopUp({ type: props.page.toUpperCase(), payload: { type: 'close' } })
+  }
+
+  const sendMessage = () => {
+    if (msg === '') return
+    let info = {
+      id_sender: userInfo.userInfo.id,
+      id_recipient: popUp.popUp[props.page].value.user.id,
+      content: msg,
+      user: {
+        id: sessionStorage.getItem('id'),
+        password: sessionStorage.getItem('psw'),
+      }
+    }
+    console.log(info)
+    axios.post(process.env.REACT_APP_API_URL + '/api/Chat/AddChat', info)
+      .then((result) => {
+        // // Console.log(result)
+        if (result.data === 'user existe pas') return
+        userInfo.dispatchUserInfo({
+          type: 'ADD CHAT', payload: {
+            id_people: popUp.popUp[props.page].value.user.id,
+            user: {
+              surname: popUp.popUp[props.page].value.user.surname,
+              firstname: popUp.popUp[props.page].value.user.firstname
+            },
+            chat: { content: msg, send_time: Date.now(), who: true, status: "Envoyer", id: 0 }
+          }
+        })
+      })
+    setMsg('')
   }
 
   const qualifTab = () => {
@@ -118,8 +152,8 @@ function RecruiterAnnouncementPopUp(props) {
           <h5 className='publish_time'>Date de publication : {new Date(popUp.popUp[props.page].value.publish_date).toLocaleDateString()} à {new Date(popUp.popUp[props.page].value.publish_date).toLocaleTimeString()}</h5>
 
           <div className='message'>
-            <input type='text' placeholder='Envoyer un message au recruteur' />
-            <button className='send_massage'>
+            <input type='text' placeholder='Envoyez un message au recruteur' value={msg} onChange={(e) => setMsg(e.target.value)} />
+            <button className='send_massage' onClick={sendMessage}>
               <img alt='send_massage' src={Pictures.Send} />
             </button>
           </div>

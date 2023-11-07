@@ -198,7 +198,7 @@ function NewPost() {
 
   const finish_rendu = () => {
     return <>
-      <h3>Votre annonce à bien été ajouté !</h3>
+      <h3>Votre annonce a bien été ajoutée !</h3>
     </>
   }
 
@@ -226,7 +226,7 @@ function NewPost() {
       </div>
 
       <div className='button_nav'>
-        {isPrecButton() && <button className='previous' onClick={() => setView(view - 1)}>Précedent</button>}
+        {isPrecButton() && <button className='previous' onClick={() => setView(view - 1)}>Précédent</button>}
 
         {isNextButton() && <button className='next' onClick={() => setView(view + 1)}>Suivant</button>}
 

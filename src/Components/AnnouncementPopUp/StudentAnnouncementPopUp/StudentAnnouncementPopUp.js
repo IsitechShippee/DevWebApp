@@ -37,8 +37,17 @@ function StudentAnnoucement(props) {
     axios.post(process.env.REACT_APP_API_URL + '/api/Chat/AddChat', info)
       .then((result) => {
         // // Console.log(result)
-        if(result.data === 'user existe pas') return
-        userInfo.dispatchUserInfo({ type: 'ADD CHAT', payload: { id_people: popUp.popUp[props.page].value.user.id, chat: { content: msg, send_time: Date.now(), who: true, status: "Envoyer", id: 0 } } })
+        if (result.data === 'user existe pas') return
+        userInfo.dispatchUserInfo({
+          type: 'ADD CHAT', payload: {
+            id_people: popUp.popUp[props.page].value.user.id,
+            user: {
+              surname: popUp.popUp[props.page].value.user.surname,
+              firstname: popUp.popUp[props.page].value.user.firstname
+            },
+            chat: { content: msg, send_time: Date.now(), who: true, status: "Envoyer", id: 0 }
+          }
+        })
       })
     setMsg('')
   }
@@ -78,7 +87,7 @@ function StudentAnnoucement(props) {
           <h5 className='publish_time'>Date de publication : {new Date(popUp.popUp[props.page].value.publish_date).toLocaleDateString()} à {new Date(popUp.popUp[props.page].value.publish_date).toLocaleTimeString()}</h5>
 
           <div className='message'>
-            <input type='text' placeholder="Envoyer un message à l'étudiant" value={msg} onChange={(e) => setMsg(e.target.value)}/>
+            <input type='text' placeholder="Envoyez un message à l'étudiant" value={msg} onChange={(e) => setMsg(e.target.value)} />
             <button className='send_massage' onClick={sendMessage}>
               <img alt='send_massage' src={Pictures.Send} />
             </button>

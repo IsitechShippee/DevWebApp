@@ -39,7 +39,7 @@ const contentChat = () => {
   if (selectedChat) {
     return <div className='chat_content'>
       <div className='head'>
-        <img src={Pictures.Profils /*selectedChat.user_picture*/} alt='profils_picture' />
+        <img src={Pictures.EmptyUser /*selectedChat.user_picture*/} alt='profils_picture' />
         <h1>{selectedChat.user_firstname} {selectedChat.user_surname}</h1>
       </div>
       <div className='chats'>
@@ -52,7 +52,7 @@ const contentChat = () => {
       </div>
       <div className='foot'>
         <div className='text_bar'>
-          <input type='text' placeholder='Envoyer un message' value={msg} onInput={(e) => setMsg(e.target.value)} />
+          <input type='text' placeholder='Envoyez un message' value={msg} onInput={(e) => setMsg(e.target.value)} />
           <button onClick={sendMsg}><img src={Pictures.Send} alt='send_button' /></button>
           {/* Il me faut l'id des user qui envoies les message dans la requete de connexion dans le tableau des convs */}
         </div>
@@ -64,7 +64,7 @@ const contentChat = () => {
 }
 return (
   <div className='Chat'>
-    <ChatList setSelectedChat={setSelectedChat} profils={Pictures.Profils} />
+    <ChatList setSelectedChat={setSelectedChat} profils={Pictures.EmptyUser} />
     {contentChat()}
   </div>
 )

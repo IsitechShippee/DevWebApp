@@ -31,7 +31,7 @@ function NavBar(props) {
       </Link>
       <Link to='/chat' onClick={() => acitveElement(3)} className={props.isActive === 3 ? 'active' : ''}>
         <SVG.Chat />
-        <h1>Message</h1>
+        <h1>Messages</h1>
       </Link>
       <Link to='/user' onClick={() => acitveElement(4)} className={props.isActive === 4 ? 'user active' : 'user'}>
         <SVG.User />
