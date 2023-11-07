@@ -77,7 +77,7 @@ function Search() {
     // Console.log('request : ', process.env.REACT_APP_API_URL + '/api/Annoucement/listannouncement?' + url)
     axios.get(process.env.REACT_APP_API_URL + '/api/Annoucement/listannouncement?' + url)
       .then((response) => {
-        console.log('search reponse : ', response.data)
+        // console.log('search reponse : ', response.data)
         setSearchList(response.data)
       })
   }

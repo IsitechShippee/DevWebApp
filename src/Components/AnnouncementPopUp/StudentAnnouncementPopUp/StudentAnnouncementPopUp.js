@@ -18,8 +18,9 @@ function StudentAnnoucement(props) {
   }
 
   const user_picture = () => {
-    if (popUp.popUp[props.page].value.user.picture || popUp.popUp[props.page].value.user.picture !== "") return popUp.popUp[props.page].value.user.picture
-    else return Pictures.EmptyUser
+    // if (popUp.popUp[props.page].value.user.picture || popUp.popUp[props.page].value.user.picture !== "") return popUp.popUp[props.page].value.user.picture
+    // else 
+    return Pictures.EmptyUser
   }
 
   const sendMessage = () => {

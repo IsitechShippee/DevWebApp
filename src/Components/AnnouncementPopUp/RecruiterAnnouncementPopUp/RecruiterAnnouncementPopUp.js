@@ -29,7 +29,7 @@ function RecruiterAnnouncementPopUp(props) {
         password: sessionStorage.getItem('psw'),
       }
     }
-    console.log(info)
+    // console.log(info)
     axios.post(process.env.REACT_APP_API_URL + '/api/Chat/AddChat', info)
       .then((result) => {
         // // Console.log(result)
@@ -57,13 +57,15 @@ function RecruiterAnnouncementPopUp(props) {
   }
 
   const user_picture = () => {
-    if (popUp.popUp[props.page].value.user.picture || popUp.popUp[props.page].value.user.picture !== "") return popUp.popUp[props.page].value.user.picture
-    else return Pictures.EmptyUser
+    // if (popUp.popUp[props.page].value.user.picture || popUp.popUp[props.page].value.user.picture !== "") return popUp.popUp[props.page].value.user.picture
+    // else 
+    return Pictures.EmptyUser
   }
 
   const company_picture = () => {
-    if (popUp.popUp[props.page].value.user.company.picture || popUp.popUp[props.page].value.user.company.picture !== "") return popUp.popUp[props.page].value.user.company.picture
-    else return Pictures.EmptyCompany
+    // if (popUp.popUp[props.page].value.user.company.picture || popUp.popUp[props.page].value.user.company.picture !== "") return popUp.popUp[props.page].value.user.company.picture
+    // else 
+    return Pictures.EmptyCompany
   }
 
 
